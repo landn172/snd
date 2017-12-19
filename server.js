@@ -48,8 +48,9 @@ app.get('/:pagename', (req, res, next) => {
   const pageHTML = pagename ? `${pagename}.ejs` : 'index.html';
 
   const filepath = path.join(__dirname, '/src/pages/', pageHTML);
-  const targetHTML = fs.readFileSync(filepath, 'utf-8');
-  if (!targetHTML) {
+
+  const isExist = fs.existsSync(filepath);
+  if (!isExist) {
     return next('输入路径无效');
   }
   // 发送获取到的页面

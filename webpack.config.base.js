@@ -8,7 +8,7 @@ const config = {
   entry: ['./src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    // publicPath: '/',
     filename: '[name].[hash:7].js',
   },
   devtool: 'inline-source-map',
