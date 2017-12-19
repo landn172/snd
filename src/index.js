@@ -10,9 +10,13 @@ const pageData = [];
 
 const pageLen = 1;
 
+function requirePageContent(pageName) {
+  return require(`${__dirname}/pages/${pageName}.ejs`);
+}
 
-for (let i = 1; i <= pageLen; i++) {
-  pageData.push({ content: require(`${__dirname}/pages/${i}.ejs`) });
+for (let i = 0; i <= pageLen;) {
+  i += 1;
+  pageData.push({ content: requirePageContent(i) });
 }
 
 const mainSlider = new Islider($('main-container'), pageData.reverse(), {
