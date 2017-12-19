@@ -11,9 +11,11 @@ const webpackConfig = merge(config, {
         test: /\.(less|css)$/,
         use: ExtractTextPlugin.extract({
           use: [
-            { loader: 'css-loader',
+            {
+              loader: 'css-loader',
               options: {
                 minimize: true,
+                sourceMap: false,
               },
             },
             {
@@ -23,7 +25,13 @@ const webpackConfig = merge(config, {
                 plugins: () => [autoprefixer()],
               },
             },
-            'less-loader'],
+            {
+              loader: 'less-loader',
+              options: {
+                sourceMap: false,
+              },
+            },
+          ],
           fallback: 'style-loader',
         }),
       },

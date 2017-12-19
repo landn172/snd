@@ -14,7 +14,7 @@ function requirePageContent(pageName) {
   return require(`${__dirname}/pages/${pageName}.ejs`);
 }
 
-for (let i = 0; i <= pageLen;) {
+for (let i = 0; i < pageLen;) {
   i += 1;
   pageData.push({ content: requirePageContent(i) });
 }
