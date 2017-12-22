@@ -9,7 +9,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     // publicPath: '/',
-    filename: '[name].[hash:7].js',
+    filename: '[name].[chunkhash:7].js',
   },
   devtool: 'inline-source-map',
   module: {
@@ -49,7 +49,7 @@ const config = {
       },
     }),
     new ExtractTextPlugin({
-      filename: 'common.[hash:7].css',
+      filename: 'common.[chunkhash:7].css',
     }),
   ],
 };
