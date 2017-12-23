@@ -24,7 +24,7 @@ const mainSlider = new Islider($('main-container'), pageData.reverse(), {
   isVertical: 0,
   animateTime: 300,
   plugins: [],
-  initIndex: pageData.length - 1,
+  initIndex: pageData.length - 10,
   oninitialized() {
     console.log('inited');
   },
