@@ -9,12 +9,11 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     // publicPath: '/',
-    filename: '[name].[chunkhash:7].js',
+    filename: '[name].[hash:7].js',
   },
   devtool: 'inline-source-map',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
@@ -28,6 +27,15 @@ const config = {
         test: /\.(html|ejs)$/,
         use: [{ loader: 'html-loader', options: {} }],
       },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]'
+          }
+        }]
+      }
     ],
   },
   plugins: [
@@ -49,7 +57,7 @@ const config = {
       },
     }),
     new ExtractTextPlugin({
-      filename: 'common.[chunkhash:7].css',
+      filename: 'common.[hash:7].css',
     }),
   ],
 };

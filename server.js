@@ -36,10 +36,12 @@ app.set('view engine', 'ejs');
 app.engine('.html', ejs.renderFile);
 app.set('views', `${__dirname}/src/pages`);
 
-// const serve = (_path, cache) =>
-//   express.static(resolve(_path), {
-//     maxAge: cache ? 1000 * 60 * 60 * 24 * 30 : 0,
-//   });
+const serve = (_path, cache) =>
+  express.static(resolve(_path), {
+    maxAge: cache ? 1000 * 60 * 60 * 24 * 30 : 0,
+  });
+
+app.use('/images', serve('src/images', 1))
 
 app.use(lessCompiler);
 

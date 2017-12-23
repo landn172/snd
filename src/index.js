@@ -8,7 +8,7 @@ function $(id) {
 
 const pageData = [];
 
-const pageLen = 1;
+const pageLen = 48;
 
 function requirePageContent(pageName) {
   return require(`${__dirname}/pages/${pageName}.ejs`);
