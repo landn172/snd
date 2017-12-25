@@ -1,6 +1,20 @@
+@import "./animate.less";
+.islider-active {
+  .page-1 {
+    .click {
+      animation-play-state: running;
+      animation-duration: 3s;
+    }
+    .text {
+    }
+  }
+}
+
 .page-1 {
-  background: url("../images/1/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    background-image: url("../images/1/bg.jpg");
+  }
+
   .click {
     position: absolute;
     width: 200px;
@@ -9,6 +23,17 @@
     bottom: 50px;
     transform: translateX(-50%);
     background: url("../images/1/click.png") center center no-repeat;
+    background-size: contain;
+    animation-play-state: paused;
+  }
+  .text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    height: 60%;
+    width: 2rem;
+    background: url("../images/1/text.png") center center no-repeat;
     background-size: contain;
   }
 }

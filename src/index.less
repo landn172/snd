@@ -1,3 +1,4 @@
+@import "./css/animate.less";
 html,
 body {
   margin: 0;
@@ -16,6 +17,15 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+.bg {
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
 }
 
 // 当前页样式
@@ -37,7 +47,7 @@ body {
   background: url("./images/back.png") center center no-repeat;
   background-size: contain;
   z-index: 9999;
-  transform:translateZ(0px);
+  transform: translateZ(0px);
 }
 
 @import "./css/1.less";
