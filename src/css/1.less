@@ -2,10 +2,15 @@
 .islider-active {
   .page-1 {
     .click {
-      animation-play-state: running;
+      .animated();
+      .animated.infinite();
       animation-duration: 3s;
     }
     .text {
+      .animated();
+    }
+    .bg {
+      .animated();      
     }
   }
 }
@@ -13,6 +18,7 @@
 .page-1 {
   .bg {
     background-image: url("../images/1/bg.jpg");
+    opacity: 0;
   }
 
   .click {
@@ -24,7 +30,7 @@
     transform: translateX(-50%);
     background: url("../images/1/click.png") center center no-repeat;
     background-size: contain;
-    animation-play-state: paused;
+    // animation-play-state: paused;
   }
   .text {
     position: absolute;
@@ -35,5 +41,6 @@
     width: 2rem;
     background: url("../images/1/text.png") center center no-repeat;
     background-size: contain;
+    // animation-play-state: paused;
   }
 }
