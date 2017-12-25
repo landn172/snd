@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const webpackConfig = merge(config, {
   module: {
@@ -37,8 +38,18 @@ const webpackConfig = merge(config, {
       },
     ],
   },
+  plugins: [
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      optipng: {
+        optimizationLevel: 3,
+      },
+      jpegtran: {
+        progressive: true,
+      },
+    }),
+    new webpack.optimize.UglifyJsPlugin(),
+  ],
 });
-
-webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin());
 
 module.exports = webpackConfig;

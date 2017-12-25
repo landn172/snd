@@ -19,19 +19,25 @@ for (let i = 0; i < pageLen;) {
 
 const $mainContainer = $('#main-container');
 const $body = $('body');
+const $back = $('#back-icon');
+const initIndex = getRealPageNumber(1);
+const historySliderIndex = [initIndex];
 
 const mainSlider = new Islider($mainContainer[0], pageData.reverse(), {
   isLooping: false,
   isVertical: 0,
   animateTime: 300,
   plugins: [],
-  initIndex: getRealPageNumber(1),
+  initIndex,
   oninitialized() {},
+  onSlideChanged(index) {
+    historySliderIndex.push(index);
+  },
   fixPage: false,
 });
 
 function getRealPageNumber(pageNumber) {
-  return pageData.length - pageNumber;
+  return pageData.length - pageNumber; // 48 - N
 }
 
 function clickEventHandle(selector, toPageNumber) {
@@ -39,6 +45,13 @@ function clickEventHandle(selector, toPageNumber) {
     mainSlider.slideTo(getRealPageNumber(toPageNumber));
   });
 }
+$back.on('click', () => {
+  let last = historySliderIndex.pop();
+  console.log(historySliderIndex);
+  if (historySliderIndex.length === 0) return;
+  last = historySliderIndex.pop();
+  mainSlider.slideTo(last);
+});
 
 const eventConfig = {
   '.page-1 .click': 2, // 首页click
