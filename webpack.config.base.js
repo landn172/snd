@@ -13,7 +13,8 @@ const config = {
   },
   devtool: 'inline-source-map',
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
@@ -29,13 +30,16 @@ const config = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]'
-          }
-        }]
-      }
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
