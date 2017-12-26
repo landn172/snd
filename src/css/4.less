@@ -1,5 +1,129 @@
-.page-4 {
-  background: url("../images/4/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+@import "./animate.less";
+@timer: 0.5s;
+.islider-active {
+  .page-4 {
+    .marker,
+    .image,
+    .text,
+    .tran,
+    .six-icon,
+    .text-more,
+    .info-title {
+      .animated();
+    }
+    .text {
+      animation-delay: @timer;
+    }
+    .info-title {
+      animation-delay: @timer+.5;
+    }
+    .six-icon {
+      animation-delay: @timer+1;
+    }
+    .text-more {
+      animation-delay: @timer+1.5;
+    }
+    .image1 {
+      animation-delay: @timer+1.8;
+    }
+    .trans1 {
+      animation-delay: @timer+2;
+    }
+    .image2 {
+      animation-delay: @timer+2.2;
+    }
+    .trans2 {
+      animation-delay: @timer+2.4;
+    }
+    .image3 {
+      animation-delay: @timer+2.6;
+    }
+    .bg {
+      .animated();
+    }
+  }
 }
 
+.page-4 {
+  .bg {
+    background-image: url("../images/4/bg1.jpg");
+  }
+  .marker {
+    position: absolute;
+    top: 34px;
+    right: 2rem;
+    width: 2.3rem;
+    height: 100px;
+    background: url("../images/4/marker-log.png") no-repeat;
+    background-size: contain;
+  }
+  .text {
+    position: absolute;
+    top: 32px;
+    left: 2rem;
+    width: 3.5rem;
+    height: 208px;
+    background: url("../images/4/text.png") no-repeat;
+    background-size: contain;
+  }
+  .info-title {
+    position: absolute;
+    width: 1.5rem;
+    height: 226px;
+    right: 1.4rem;
+    top: 337px;
+    background: url("../images/4/info-title.png") no-repeat;
+    background-size: contain;
+  }
+  .six-icon {
+    position: absolute;
+    width: 1.4rem;
+    height: 386px;
+    right: 3.1rem;
+    top: 260px;
+    background: url("../images/4/six-icon.png") no-repeat;
+    background-size: contain;
+  }
+  .text-more {
+    position: absolute;
+    width: 0.5rem;
+    height: 276px;
+    top: 311px;
+    left: 4.5rem;
+    background: url("../images/4/text-more.png") no-repeat;
+    background-size: contain;
+  }
+  .image {
+    position: absolute;
+    height: 2.4rem;
+    width: 2.8rem;
+    left: 1.4rem;
+    top: 275px;
+    background: url("../images/4/image1.png") no-repeat;
+    background-size: contain;
+  }
+  .image2 {
+    top: 408px;
+    background-image: url("../images/4/image2.png");
+  }
+  .image3 {
+    top: 536px;
+    background-image: url("../images/4/image3.png");
+  }
+  .tran {
+    position: absolute;
+    height: 1.1rem;
+    width: 2.2rem;
+    left: 2rem;
+    top: 364px;
+    background: url("../images/4/trans1.png") no-repeat;
+    background-size: contain;
+  }
+  .trans2 {
+    background-image: url("../images/4/trans2.png");
+    height: 1.1rem;
+    width: 2.9rem;
+    top: 495px;
+    left: 1.4rem;
+  }
+}
