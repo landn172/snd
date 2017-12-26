@@ -1,13 +1,50 @@
+@import "./animate.less";
+.islider-active {
+  .page-6 {
+    .bg {
+      .animated();
+    }
+    .image {
+      .animated();
+    }
+    .image2 {
+      animation-delay: 0.5s;
+    }
+    .image3 {
+      animation-delay: 1s;
+    }
+  }
+}
+
 .page-6 {
-  background: url("../images/6/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
-  .tree-image {
+  .bg {
+    background-image: url("../images/6/bg.jpg");
+    opacity: 0;
+  }
+  .image {
     position: absolute;
-    top: 0;
-    left: 56px;
-    width: 65%;
-    height: 100%;
-    background: url("../images/6/tree_image.png") center center no-repeat;
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .image1 {
+    top: 10px;
+    width: 3rem;
+    height: 224px;
+    left: 1.4rem;
+    background-image: url("../images/6/image1.png");
+  }
+  .image2 {
+    top: 230px;
+    width: 5.8rem;
+    height: 284px;
+    left: 1.4rem;
+    background-image: url("../images/6/image2.png");
+  }
+  .image3 {
+    top: 505px;
+    width: 5.8rem;
+    height: 154px;
+    left: 2rem;
+    background-image: url("../images/6/image3.png");
   }
 }
