@@ -4,6 +4,7 @@ import {
   getClassPageNumber,
   isParentSlider,
 } from './utils';
+import HistoryRouter from './router';
 import SectionSlider from './SectionSlider';
 import HistorySlider from './historySlider';
 import './islider.less';
@@ -12,7 +13,7 @@ import './index.less';
 FastClick.attach(document.body);
 
 const pageData = [];
-
+const histroyRouter = new HistoryRouter();
 const pageLen = 48;
 
 function requirePageContent(pageName) {
@@ -41,12 +42,13 @@ const pagesConfig = [
 const $mainContainer = $('#main-container');
 const $sectionContainer = $('#slider-container');
 const $body = $('body');
-const $back = $('#back-icon');
+const $back = $('#back-icon').hide();
 const initIndex = getRealPageNumber(1);
 const mainHistory = new HistorySlider(initIndex);
 
+
 // 主要slider
-const mainSlider = new Islider($mainContainer[0], pageData.reverse(), {
+const mainSlider = new Islider($mainContainer[0], [].concat(pageData).reverse(), {
   isLooping: false,
   isVertical: 0,
   plugins: [],
@@ -54,6 +56,11 @@ const mainSlider = new Islider($mainContainer[0], pageData.reverse(), {
   oninitialized() {},
   onSlideChanged(index) {
     mainHistory.lazyPush(index);
+    if (index === getRealPageNumber(1)) {
+      $('#back-icon').hide();
+    } else {
+      $('#back-icon').show();
+    }
   },
   fixPage: false,
   isTouchable: false,
@@ -61,28 +68,43 @@ const mainSlider = new Islider($mainContainer[0], pageData.reverse(), {
 // 副slider
 let sectionSlider;
 
-function getRealPageNumber(pageNumber) {
-  return pageData.length - pageNumber; // 48 - N
+histroyRouter.registerHistory(mainHistory, mainSlider);
+
+function getRealPageNumber(pageNumber, len = pageData.length) {
+  return len - pageNumber; // 48 - N
 }
 
 function clickEventHandle(selector, toPageNumber) {
   const pageNumber = getClassPageNumber(selector);
   $body.on('click', selector, () => {
     const targetSlider = isParentSlider(pageNumber, pagesConfig);
+    // 如果是在配置中
     if (targetSlider) {
       const sliderData = targetSlider.getRenderData(pageData);
       const sliderIndex = targetSlider.getSlideToNumber(toPageNumber);
-      reInitSectionSlider(sliderData, sliderIndex);
+      const sectionHistory = reInitSectionSlider(
+        sliderData.reverse(),
+        getRealPageNumber(sliderIndex, sliderData.length),
+      );
+      histroyRouter.registerHistory(sectionHistory, sectionSlider);
     } else {
       mainSlider.slideTo(getRealPageNumber(toPageNumber));
     }
   });
 }
 $back.on('click', () => {
-  // let last = historySliderIndex.pop();
-  // if (historySliderIndex.length === 0) return;
-  // last = historySliderIndex.pop();
-  // mainSlider.slideTo(last);
+  const lastHistory = histroyRouter.back();
+  if (!lastHistory) return;
+  const {
+    lastIndex,
+    lastSlider,
+    backHistorys,
+  } = lastHistory;
+  if (backHistorys.length > 0) {
+    hideSectionSlider();
+  } else {
+    lastSlider.slideTo(lastIndex);
+  }
 });
 
 const eventConfig = {
@@ -132,6 +154,7 @@ function reInitSectionSlider(data, index = 1) {
       isLooping: false,
       isVertical: 0,
       animateTime: 300,
+      initIndex: index,
       plugins: [],
       fixPage: false,
     });
@@ -150,12 +173,15 @@ function reInitSectionSlider(data, index = 1) {
   });
   sectionSlider.lastHistory = sectionHistory;
   showSectionSlider();
+  return sectionHistory;
 }
 
 function showSectionSlider() {
   $sectionContainer.addClass('active');
+  $mainContainer.addClass('disable');
 }
 
 function hideSectionSlider() {
   $sectionContainer.removeClass('active');
+  $mainContainer.removeClass('disable');
 }

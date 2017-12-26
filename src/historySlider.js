@@ -14,12 +14,16 @@ export default class HistorySlider {
     this.history.push(...this.pushPool);
   }
 
+  clearPool() {
+    this.pushPool = [];
+  }
+
   popLastHistory() {
     return this.history.pop();
   }
 
   destory() {
     this.history.length = 0;
-    this.flushPool.length = 0;
+    this.pushPool.length = 0;
   }
 }

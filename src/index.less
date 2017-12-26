@@ -16,7 +16,6 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  position: relative;
 }
 
 .btn {
@@ -34,6 +33,13 @@ body {
   &.active {
     opacity: 1;
     z-index: 1;
+  }
+}
+
+#main-container {
+  transition: opacity .1s linear;
+  &.disable {
+    opacity: 0;
   }
 }
 

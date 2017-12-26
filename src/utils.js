@@ -6,7 +6,7 @@
 export function fillSequenceNumber(start, end) {
   const arr = [];
   const len = end - start;
-  for (let i = 0; i < len; i++) {
+  for (let i = 0; i <= len; i++) {
     arr.push(start + i);
   }
   return arr;
@@ -21,9 +21,14 @@ const classPageReg = /\.page-(\d+)/i;
 export function getClassPageNumber(className = '') {
   const match = className.match(classPageReg);
   if (!match) return null;
-  return match[1];
+  return match[1] * 1;
 }
 
+/**
+ * 判断当前页是否是 父级页面
+ * @param {*} pageNumber
+ * @param {*} pagesConfig
+ */
 export function isParentSlider(pageNumber, pagesConfig) {
   return pagesConfig.find(config => config.parentPageNumber === pageNumber);
 }
