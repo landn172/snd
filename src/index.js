@@ -1,4 +1,11 @@
 import Islider from 'islider.js/build/iSlider.js';
+import {
+  fillSequenceNumber,
+  getClassPageNumber,
+  isParentSlider,
+} from './utils';
+import SectionSlider from './SectionSlider';
+import HistorySlider from './historySlider';
 import './islider.less';
 import './index.less';
 
@@ -14,43 +21,68 @@ function requirePageContent(pageName) {
 
 for (let i = 0; i < pageLen;) {
   i += 1;
-  pageData.push({ content: requirePageContent(i) });
+  pageData.push({
+    content: requirePageContent(i),
+  });
 }
 
+// 配置可slider页面
+const pagesConfig = [
+  new SectionSlider(fillSequenceNumber(4, 6), 3),
+  new SectionSlider(fillSequenceNumber(8, 11), 7),
+  new SectionSlider(fillSequenceNumber(17, 19), 16),
+  new SectionSlider([21, 22], 20),
+  new SectionSlider(fillSequenceNumber(24, 26), 23),
+  new SectionSlider([28, 29], 27),
+  new SectionSlider(fillSequenceNumber(33, 39), 32),
+  new SectionSlider(fillSequenceNumber(41, 45), 40),
+];
+
 const $mainContainer = $('#main-container');
+const $sectionContainer = $('#slider-container');
 const $body = $('body');
 const $back = $('#back-icon');
 const initIndex = getRealPageNumber(1);
-const historySliderIndex = [initIndex];
+const mainHistory = new HistorySlider(initIndex);
 
+// 主要slider
 const mainSlider = new Islider($mainContainer[0], pageData.reverse(), {
   isLooping: false,
   isVertical: 0,
-  animateTime: 300,
   plugins: [],
   initIndex,
   oninitialized() {},
   onSlideChanged(index) {
-    historySliderIndex.push(index);
+    mainHistory.lazyPush(index);
   },
   fixPage: false,
+  isTouchable: false,
 });
+// 副slider
+let sectionSlider;
 
 function getRealPageNumber(pageNumber) {
   return pageData.length - pageNumber; // 48 - N
 }
 
 function clickEventHandle(selector, toPageNumber) {
+  const pageNumber = getClassPageNumber(selector);
   $body.on('click', selector, () => {
-    mainSlider.slideTo(getRealPageNumber(toPageNumber));
+    const targetSlider = isParentSlider(pageNumber, pagesConfig);
+    if (targetSlider) {
+      const sliderData = targetSlider.getRenderData(pageData);
+      const sliderIndex = targetSlider.getSlideToNumber(toPageNumber);
+      reInitSectionSlider(sliderData, sliderIndex);
+    } else {
+      mainSlider.slideTo(getRealPageNumber(toPageNumber));
+    }
   });
 }
 $back.on('click', () => {
-  let last = historySliderIndex.pop();
-  console.log(historySliderIndex);
-  if (historySliderIndex.length === 0) return;
-  last = historySliderIndex.pop();
-  mainSlider.slideTo(last);
+  // let last = historySliderIndex.pop();
+  // if (historySliderIndex.length === 0) return;
+  // last = historySliderIndex.pop();
+  // mainSlider.slideTo(last);
 });
 
 const eventConfig = {
@@ -92,3 +124,38 @@ const eventConfig = {
 };
 
 Object.keys(eventConfig).forEach(key => clickEventHandle(key, eventConfig[key]));
+
+// 重新初始化 sectionSlider
+function reInitSectionSlider(data, index = 1) {
+  if (!sectionSlider) {
+    sectionSlider = new Islider($sectionContainer[0], data, {
+      isLooping: false,
+      isVertical: 0,
+      animateTime: 300,
+      plugins: [],
+      fixPage: false,
+    });
+  } else {
+    sectionSlider.loadData(data, index);
+  }
+
+  if (sectionSlider.lastHistory) {
+    sectionSlider.lastHistory.destory();
+    sectionSlider.lastHistory = null;
+  }
+  const sectionHistory = new HistorySlider(index);
+
+  sectionSlider.on('slideChanged', (i) => {
+    sectionHistory.lazyPush(i);
+  });
+  sectionSlider.lastHistory = sectionHistory;
+  showSectionSlider();
+}
+
+function showSectionSlider() {
+  $sectionContainer.addClass('active');
+}
+
+function hideSectionSlider() {
+  $sectionContainer.removeClass('active');
+}
