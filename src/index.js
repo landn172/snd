@@ -57,6 +57,9 @@ const eventConfig = {
   '.page-1 .click': 2, // 首页click
   '.page-2 .circle1': 3, // 电子行业概述
   '.page-2 .circle2': 46, // 成功案例
+  '.page-2 .btn1': 7, // 安全工厂
+  '.page-2 .btn2': 32, // 透明工厂
+  '.page-2 .btn3': 40, // 绿色工厂
   '.page-3 .btn1': 4, // 行业趋势
   '.page-3 .btn2': 5, // 行业驱动力
   '.page-3 .btn3': 6, // 电子厂房特征
