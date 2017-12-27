@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "core-js": "^2.5.3",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-ejs-layouts": "^2.3.1",
