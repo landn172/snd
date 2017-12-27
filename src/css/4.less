@@ -40,11 +40,21 @@
     }
     .bg {
       .animated();
+      .fadeIn();
     }
   }
 }
 
 .page-4 {
+  .marker,
+  .image,
+  .text,
+  .tran,
+  .six-icon,
+  .text-more,
+  .info-title {
+    transition: all 0.3s ease-in-out;
+  }
   .bg {
     background-image: url("../images/4/bg1.jpg");
   }
@@ -56,6 +66,7 @@
     height: 100px;
     background: url("../images/4/marker-log.png") no-repeat;
     background-size: contain;
+    transform: translate3d(0, -200%, 0);
   }
   .text {
     position: absolute;

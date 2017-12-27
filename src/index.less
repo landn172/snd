@@ -8,18 +8,30 @@ body {
   position: relative;
 }
 
-#main-container {
+#main-container,
+.slider-container {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   overflow: hidden;
-  position: relative;
 }
 
-.btn {
-  &:hover,
-  &:active {
-    transform: scale(1.2);
-    opacity: 7;
+.slider-container {
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  &.active {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+#main-container {
+  transition: opacity 0.1s linear;
+  &.disable {
+    opacity: 0;
   }
 }
 
@@ -32,6 +44,7 @@ body {
 .bg {
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center center;
   position: absolute;
   height: 100%;
   width: 100%;
