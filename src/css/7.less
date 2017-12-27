@@ -1,6 +1,42 @@
+@import "./animate.less";
+.islider-active {
+  .page-7 {
+    .bg {
+      .animated();
+    }
+    .set{
+      .animated();
+      .animated.infinite();
+      animation-duration: 3s;
+    }
+    .set3{
+      animation-delay: 0.6s;
+    }
+    .set4{
+      animation-delay: 1.2s;
+    }
+    .set5{
+      animation-delay: 1.8s;
+    }
+    .set6{
+      animation-delay: 2.4s;
+    }
+    .set7{
+      animation-delay: 3s;
+    }
+  }
+}
+
 .page-7 {
-  background: url("../images/7/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+
+  .bg {
+    background-image: url("../images/7/bg1.jpg");
+    opacity: 0;
+  }
+  .mask{
+    background-image: url("../images/7/mask.png");
+    height: auto;
+  }
   .btn {
     position: absolute;
     width: 1.2rem;
@@ -11,24 +47,82 @@
   .btn1 {
     right: 1.8rem;
     top: 20px;
-
-    background-image: url("../images/7/btn1.png");
+    background-image: url("../images/7/btn1/button.png");
+    &:hover{
+      background-image: url("../images/7/btn1/button-1.png");
+    }
   }
 
   .btn2 {
     right: 3.5rem;
     top: 20px;
-    background-image: url("../images/7/btn2.png");
+    background-image: url("../images/7/btn2/button.png");
+    &:hover{
+      background-image: url("../images/7/btn2/button-1.png");
+    }
   }
 
   .btn3 {
     right: 5.2rem;
     top: 20px;
-    background-image: url("../images/7/btn3.png");
+    background-image: url("../images/7/btn3/button.png");
+    &:hover{
+      background-image: url("../images/7/btn3/button-1.png");
+    }
   }
+  
   .btn4 {
     right: 7rem;
     top: 20px;
-    background-image: url("../images/7/btn4.png");
+    background-image: url("../images/7/btn4/button.png");
+    &:hover{
+      background-image: url("../images/7/btn4/button-1.png");
+    }
   }
+  
+  .set{
+    position: absolute;
+    background-size: contain;
+  }
+  .set3{
+    right: 5.05rem;
+    top: 177px;
+    background-image: url("../images/7/set3.png");
+    
+    width: 2rem;
+    height: 130px;
+  }
+  .set4{
+    right: 6.75rem;
+    top: 293px;
+    background-image: url("../images/7/set4.png");
+
+    width: 2.3rem;
+    height: 128px;
+  }
+  .set5{
+    right: 6rem;
+    top: 537px;
+    background-image: url("../images/7/set5.png");
+
+    width: 2.5rem;
+    height: 116px;
+  }
+  .set6{
+    right: 4.4rem;
+    top: 396px;
+    background-image: url("../images/7/set6.png");
+
+    width: 2rem;
+    height: 120px;
+  }
+  .set7{
+    right: 1.65rem;
+    top: 432px;
+    background-image: url("../images/7/set7.png");
+
+    width: 2.8rem;
+    height: 108px;
+  }
+  
 }
