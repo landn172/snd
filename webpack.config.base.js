@@ -13,31 +13,38 @@ const config = {
   },
   devtool: 'inline-source-map',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env'],
+            presets: [
+              ["env", {
+                "targets": {
+                  "browsers": ["last 2 versions", "iOS >= 6", "Android >= 4.4"]
+                },
+                "useBuiltIns": true
+              }]
+            ],
           },
         },
       },
       {
         test: /\.(html|ejs)$/,
-        use: [{ loader: 'html-loader', options: {} }],
+        use: [{
+          loader: 'html-loader',
+          options: {}
+        }],
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-            },
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
           },
-        ],
+        }, ],
       },
     ],
   },

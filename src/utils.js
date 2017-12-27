@@ -25,7 +25,7 @@ export function getClassPageNumber(className = '') {
 }
 
 /**
- * 判断当前页是否是 父级页面
+ * 判断当前页是否是父级页面 并返回 
  * @param {*} pageNumber
  * @param {*} pagesConfig
  */
