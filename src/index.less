@@ -29,7 +29,7 @@ body {
 .slider-container {
   z-index: -1;
   opacity: 0;
-  transition: opacity .1s linear;
+  transition: opacity 0.1s linear;
   &.active {
     opacity: 1;
     z-index: 1;
@@ -37,7 +37,7 @@ body {
 }
 
 #main-container {
-  transition: opacity .1s linear;
+  transition: opacity 0.1s linear;
   &.disable {
     opacity: 0;
   }
@@ -52,6 +52,7 @@ body {
 .bg {
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center center;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -59,7 +60,8 @@ body {
 }
 
 // 当前页样式
-.islider-active {}
+.islider-active {
+}
 
 .btn,
 .circle,
