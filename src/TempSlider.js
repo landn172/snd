@@ -1,4 +1,5 @@
 import Islider from 'islider.js/build/iSlider.js';
+import 'islider.js/build/iSlider.animate.js'
 
 const defaultConfig = {
   isLooping: false,
