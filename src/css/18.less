@@ -1,6 +1,42 @@
+@import "./animate.less";
+.islider-active {
+  .page-18 {
+    .bg {
+      .animated();
+    }
+    .title,.text,.img{
+      transform: none;
+    }
+  }
+}
+
 .page-18 {
-  background: url("../images/18/bg.jpg") center center no-repeat;
+  background: url("../images/18/bg1.jpg") center center no-repeat;
   background-size: 100% 100%;
+
+  .title {
+    background-image: url("../images/18/title.png");
+    background-size: contain;
+    position: absolute;
+    width: 0.54rem;
+    height: 203px;
+    top: 32px;
+    right: 0.8rem;
+    transition: all 1s ease;
+    transform: translate3d(0, -120%, 0);
+  }
+  .text {
+    background-image: url("../images/18/text.png");
+    background-size: contain;
+    position: absolute;
+    width: 1rem;
+    height: 596px;
+    top: 32px;
+    right: 2.25rem;
+    transition: all 1s ease;
+    transform: translate3d(0, -120%, 0);
+  }
+  
   .img-wrap {
     position: absolute;
     width: 4.4rem;
@@ -20,17 +56,25 @@
 
   .img1 {
     background-image: url("../images/18/img1.png");
+    transition: all 1s ease;
+    transform: translate3d(0, -200%, 0);
   }
 
   .img2 {
     background-image: url("../images/18/img2.png");
+    transition: all 1s ease 1s;
+    transform: translate3d(0, -300%, 0);
   }
 
   .img3 {
     background-image: url("../images/18/img3.png");
+    transition: all 1s ease 1.5s;
+    transform: translate3d(0, -400%, 0);
   }
 
   .img4 {
     background-image: url("../images/18/img4.png");
+    transition: all 1s ease 2s;
+    transform: translate3d(0, -500%, 0);
   }
 }
