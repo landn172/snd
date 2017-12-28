@@ -29,11 +29,14 @@ export function getClassPageNumber(className = '') {
 
 /**
  * 判断当前页是否是父级页面 并返回
- * @param {*} pageNumber
- * @param {*} pagesConfig
+ * @param {number} pageNumber
+ * @param {number} toPageNumber
+ * @param {object} pagesConfig
  */
-export function isParentSlider(pageNumber, pagesConfig) {
-  return pagesConfig.find(config => config.parentPageNumber === pageNumber);
+export function isParentSlider(pageNumber, toPageNumber, pagesConfig) {
+  const targetSlider = pagesConfig.find(config => config.parentPageNumber === pageNumber);
+  if (!targetSlider || targetSlider.pagesArr.indexOf(toPageNumber) === -1) return null;
+  return targetSlider;
 }
 
 /**

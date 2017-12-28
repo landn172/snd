@@ -1,17 +1,9 @@
 import 'babel-polyfill';
-import {
-  getClassPageNumber,
-  isParentSlider,
-  getRealPageNumber,
-  InitSectionSlider
-} from './utils';
+import { getClassPageNumber, isParentSlider, getRealPageNumber, InitSectionSlider } from './utils';
 import HistoryRouter from './router';
 import HistorySlider from './historySlider';
 import TempSlider from './TempSlider';
-import {
-  pagesConfig,
-  eventConfig
-} from './config';
+import { pagesConfig, eventConfig } from './config';
 import './islider.less';
 import './index.less';
 
@@ -65,38 +57,33 @@ histroyRouter.registerHistory(mainHistory, mainTempSlider);
 function clickEventHandle(selector, toPageNumber) {
   const pageNumber = getClassPageNumber(selector);
   $body.on('click', selector, () => {
-    const targetSlider = isParentSlider(pageNumber, pagesConfig);
-    const specialPageNumber = [12, 16, 20, 23];
+    const targetSlider = isParentSlider(pageNumber, toPageNumber, pagesConfig);
     // 如果是在配置中
-    if (targetSlider && specialPageNumber.indexOf(pageNumber) === 0) {
+    if (targetSlider) {
       const sliderData = targetSlider.getRenderData(pageData).reverse();
       const sliderIndex = targetSlider.getSlideToNumber(toPageNumber);
-      const {
-        sectionHistory,
-        sectionSlider
-      } = InitSectionSlider(
+      const { sectionHistory, sectionSlider } = InitSectionSlider(
         sliderData,
         getRealPageNumber(sliderIndex, sliderData.length) - 1,
       );
       console.log(pageNumber, toPageNumber);
       histroyRouter.registerHistory(sectionHistory, sectionSlider);
-    } else {
-      if (isspecial(pageNumber,toPageNumber)) {
-        $('.page-7').addClass('active');
-        setTimeout(function () {
-          histroyRouter.slideTo(getRealPageNumber(toPageNumber));
-          $('.page-7').removeClass('active');
-        }, 1000);
-      } else {
+    } else if (isspecial(pageNumber, toPageNumber)) {
+      $('.page-7').addClass('active');
+      setTimeout(() => {
         histroyRouter.slideTo(getRealPageNumber(toPageNumber));
-      }
+        $('.page-7').removeClass('active');
+      }, 1000);
+    } else {
+      histroyRouter.slideTo(getRealPageNumber(toPageNumber));
     }
   });
 }
 
+// 判断是否需要动画
 function isspecial(pageNumber, toPageNumber) {
   if (pageNumber === 7 && toPageNumber === 23) {
-    return true
+    return true;
   }
 }
 
