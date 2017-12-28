@@ -4,41 +4,40 @@
     .bg {
       .animated();
     }
-    .set{
+    .set {
       .animated();
       .animated.infinite();
       animation-duration: 3s;
     }
-    .set3{
+    .set3 {
       animation-delay: 0.6s;
     }
-    .set4{
+    .set4 {
       animation-delay: 1.2s;
     }
-    .set5{
+    .set5 {
       animation-delay: 1.8s;
     }
-    .set6{
+    .set6 {
       animation-delay: 2.4s;
     }
-    .set7{
+    .set7 {
+      animation-delay: 3s;
+    }
+    .set8,
+    .set9 {
       animation-delay: 3s;
     }
   }
 }
 
 .page-7 {
-
-  
-  
-  .bg{
+  .bg {
     //background-image: url("../images/7/mask.png");
     opacity: 0;
     background: url("../images/7/mask.png") center center no-repeat;
     background-size: 100% 100%;
   }
-
-
   .cf {
     background-image: url("../images/7/cf.png");
     position: absolute;
@@ -54,82 +53,110 @@
     height: 189px;
     background-size: contain;
   }
-
   .btn1 {
     right: 1.8rem;
     top: 20px;
     background-image: url("../images/7/btn1/button-1.png");
-    &:hover{
+    &:hover {
       background-image: url("../images/7/btn1/button.png");
     }
   }
-
   .btn2 {
     right: 3.5rem;
     top: 20px;
     background-image: url("../images/7/btn2/button-1.png");
-    &:hover{
+    &:hover {
       background-image: url("../images/7/btn2/button.png");
     }
   }
-
   .btn3 {
     right: 5.2rem;
     top: 20px;
     background-image: url("../images/7/btn3/button-1.png");
-    &:hover{
+    &:hover {
       background-image: url("../images/7/btn3/button.png");
     }
   }
-  
   .btn4 {
     right: 7rem;
     top: 20px;
     background-image: url("../images/7/btn4/button-1.png");
-    &:hover{
+    &:hover {
       background-image: url("../images/7/btn4/button.png");
     }
   }
-  
-  .set{
+  .set {
     position: absolute;
     background-size: contain;
   }
-  .set3{
+  .set3 {
     right: 5.05rem;
     top: 177px;
     background-image: url("../images/7/set3.png");
     width: 2rem;
     height: 130px;
   }
-  .set4{
+  .set4 {
     right: 6.75rem;
     top: 293px;
     background-image: url("../images/7/set4.png");
     width: 2.3rem;
     height: 128px;
   }
-  .set5{
+  .set5 {
     right: 6rem;
     top: 537px;
     background-image: url("../images/7/set5.png");
     width: 2.5rem;
     height: 116px;
   }
-  .set6{
+  .set6 {
     right: 4.4rem;
     top: 396px;
     background-image: url("../images/7/set6.png");
     width: 2rem;
     height: 120px;
   }
-  .set7{
+  .set7 {
     right: 1.65rem;
     top: 432px;
     background-image: url("../images/7/set7.png");
     width: 2.8rem;
     height: 108px;
   }
-
-  
+  .set8 {
+    right: 1.65rem;
+    top: 298px;
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image: url("../images/7/cyfdj.png");
+  }
+  .set9 {
+    right: 3.45rem;
+    top: 572px;
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image: url("../images/7/dljkzx.png");
+  }
+  .cf,
+  .set7 {
+    transition: all 1s linear;
+  }
+  &.active {
+    .btn {
+      opacity: 0;
+    }
+    .set {
+      opacity: 0;
+      animation: none;
+    }
+    .set7,
+    .cf {
+      transform: translate3d(-60px, -170px, 0px) skew(13deg) scale(6, 8);
+      animation: none;
+    }
+    .set7 {
+      opacity: 0.1;
+    }
+  }
 }

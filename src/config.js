@@ -28,6 +28,13 @@ export const eventConfig = {
   '.page-7 .btn2': 9, // 电子厂房供电系统架构
   '.page-7 .btn3': 10, // 安全工程价值主张
   '.page-7 .btn4': 11, // 安全工厂解决方案
+  '.page-7 .set3': 12,
+  '.page-7 .set4': 11,// todo
+  '.page-7 .set5': 16,
+  '.page-7 .set6': 20,
+  '.page-7 .set7': 23,
+  '.page-7 .set8': 16,
+  '.page-7 .set9': 27,
   '.page-12 .btn': 13, // 中电
   '.page-16 .btn1': 17, // 电子厂房配电特点
   '.page-16 .btn2': 18, // 电子厂房供电系统架构
