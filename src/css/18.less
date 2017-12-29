@@ -1,6 +1,55 @@
+@import "./animate.less";
+.islider-active {
+  .page-18 {
+    .bg {
+      .animated();
+    }
+    .title,.text,.img{
+      .animated();
+    }
+    .img1 {
+      animation-delay: 0.5s;
+    }
+    .img2{
+      animation-delay: 1s;
+    }
+    .img3{
+      animation-delay: 1.5s;
+    }
+    .img4{
+      animation-delay: 2s;
+    }
+  }
+}
+
 .page-18 {
-  background: url("../images/18/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    opacity: 0;
+    background: url("../images/18/bg1.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,.text,.img{
+    transition: all 0.3s ease-in-out;
+  }
+  .title {
+    background-image: url("../images/18/title.png");
+    background-size: contain;
+    position: absolute;
+    width: 0.54rem;
+    height: 203px;
+    top: 32px;
+    right: 0.8rem;
+  }
+  .text {
+    background-image: url("../images/18/text.png");
+    background-size: contain;
+    position: absolute;
+    width: 1rem;
+    height: 596px;
+    top: 32px;
+    right: 2.25rem;
+  }
+  
   .img-wrap {
     position: absolute;
     width: 4.4rem;

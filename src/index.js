@@ -52,6 +52,12 @@ const mainTempSlider = new TempSlider({
   },
 });
 
+document.addEventListener('touchmove', function (event) {
+  event.preventDefault();
+}, {
+  passive: false
+});
+
 histroyRouter.registerHistory(mainHistory, mainTempSlider);
 
 function clickEventHandle(selector, toPageNumber) {

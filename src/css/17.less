@@ -1,6 +1,54 @@
+@import "./animate.less";
+.islider-active {
+  .page-17 {
+    .bg {
+      .animated();
+    }
+    .title,.text,.img{
+      .animated();
+    }
+    .img1 {
+      animation-delay: 0.5s;
+    }
+    .img2{
+      animation-delay: 1s;
+    }
+    .img3{
+      animation-delay: 1.5s;
+    }
+    .img4{
+      animation-delay: 2s;
+    }
+  }
+}
+
 .page-17 {
-  background: url("../images/17/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    opacity: 0;
+    background: url("../images/17/bg1.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,.text,.img{
+    transition: all 0.3s ease-in-out;
+  }
+  .title {
+    background-image: url("../images/17/title.png");
+    background-size: contain;
+    position: absolute;
+    width: 0.54rem;
+    height: 161px;
+    top: 32px;
+    right: 0.8rem;
+  }
+  .text {
+    background-image: url("../images/17/text.png");
+    background-size: contain;
+    position: absolute;
+    width: 2.07rem;
+    height: 626px;
+    top: 21px;
+    right: 2.1rem;
+  }
   .img-wrap {
     position: absolute;
     width: 4.4rem;
