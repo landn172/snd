@@ -29,8 +29,8 @@ export const eventConfig = {
   '.page-7 .btn3': 10, // 安全工程价值主张
   '.page-7 .btn4': 11, // 安全工厂解决方案
   '.page-7 .set3': 12,
-  '.page-7 .set4': 11,// todo
-  '.page-7 .set5': 16,
+  // '.page-7 .set4': 11,// todo
+  // '.page-7 .set5': 16,
   '.page-7 .set6': 20,
   '.page-7 .set7': 23,
   '.page-7 .set8': 16,
