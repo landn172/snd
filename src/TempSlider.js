@@ -72,9 +72,11 @@ Islider.regPlugin('AddActive', function (opts) {
 
   this.on('slideChanged', (index, currentEl) => {
     $outer.find('.islider-html').removeClass(activeClass);
-    $(currentEl).addClass(activeClass);
+    setTimeout(() => {
+      $(currentEl).addClass(activeClass);
+    }, 1);
   });
   setTimeout(() => {
     this.fire('renderComplete')
-  }, 16);
+  }, 0);
 })

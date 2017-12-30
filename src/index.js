@@ -107,7 +107,7 @@ function SpecialClick({
   toPageNumber
 }) {
   if (pageNumber === 7) {
-    // page7 
+    // page7 放大3d效果
     if (toPageNumber === 23) {
       $('.page-7').addClass('active');
       setTimeout(() => {
@@ -118,7 +118,7 @@ function SpecialClick({
   }
 
   if (pageNumber === 13) {
-    // mask
+    // mask 弹窗
     if (toPageNumber === -1) {
       $('.page-13 .popup,.page-13 .mask').removeClass('active');
     }
