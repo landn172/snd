@@ -1,5 +1,7 @@
 import SectionSlider from './SectionSlider';
-import { fillSequenceNumber } from './utils';
+import {
+  fillSequenceNumber
+} from './utils';
 
 // 配置可slider页面
 export const pagesConfig = [
@@ -36,6 +38,9 @@ export const eventConfig = {
   '.page-7 .set8': 16,
   '.page-7 .set9': 27,
   '.page-12 .btn': 13, // 中电
+  '.page-13 .mask': -1, // 关闭mask
+  '.page-13 .btn-popup-14': 14, // 弹出 14
+  '.page-13 .btn-popup-15': 15, //弹出 15
   '.page-16 .btn1': 17, // 电子厂房配电特点
   '.page-16 .btn2': 18, // 电子厂房供电系统架构
   '.page-16 .btn3': 19, // 安全工程价值主张

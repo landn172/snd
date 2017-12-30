@@ -1,4 +1,62 @@
+@import "./animate.less";
+.islider-active {
+  .page-13 {
+    .bg,
+    .title {
+      .animated();
+    }
+  }
+}
+
 .page-13 {
-  background: url("../images/13/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    background-image: url("../images/13/bg.jpg");
+    opacity: 0;
+  }
+  .title {
+    position: absolute;
+    top: 33px;
+    width: .9rem;
+    height: 250px;
+    right: 0.7rem;
+    background: url("../images/13/title.png") center center no-repeat;
+    background-size: contain;
+  }
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0;
+    transition: all .3s ease;
+    pointer-events: none;
+    &.active {
+      opacity: .6;
+      pointer-events: all;
+    }
+  }
+  .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 6.8rem;
+    height: 590px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all .5s ease-in-out;
+    pointer-events: none;
+    &.active {
+      transform: translate(-50%, -50%) scale(1);
+      pointer-events: all;
+    }
+  }
+  .popup-14 {
+    background-image: url("../images/13/popup-14.png");
+  }
+  .popup-15 {
+    background-image: url("../images/13/popup-15.png");
+  }
 }
