@@ -44,7 +44,7 @@ const mainTempSlider = new TempSlider({
   opts: {
     isLooping: false,
     isVertical: 0,
-    plugins: [],
+    plugins: ['AddActive'],
     initIndex,
     oninitialized() {},
     onSlideChanged(index) {
