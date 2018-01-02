@@ -17,6 +17,23 @@ import './index.less';
 
 FastClick.attach(document.body);
 
+function zoomBody() {
+  const [originalWith, originalHeight] = [375, 667];
+  const {
+    innerWidth,
+    innerHeight
+  } = window;
+  const scaleWith = innerWidth / originalWith;
+  const scaleHeight = innerHeight / originalHeight;
+
+  document.body.style["zoom"] = scaleWith > scaleHeight ? scaleHeight : scaleWith;
+
+}
+
+window.addEventListener('resize', zoomBody)
+
+zoomBody();
+
 const pageData = [];
 
 const pageLen = 48;
