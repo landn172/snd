@@ -1,5 +1,17 @@
+@import "./animate.less";
+.page-active {
+  .page-27 {
+    .bg {
+      .animated();
+    }
+    .btn,.img{
+      transform: none;
+    }
+  }
+}
+
 .page-27 {
-  background: url("../images/27/bg.jpg") center center no-repeat;
+  background: url("../images/27/bg1.jpg") center center no-repeat;
   background-size: 100% 100%;
   .btn {
     position: absolute;
@@ -7,15 +19,45 @@
     height: 189px;
     background-size: contain;
     top: 102px;
+    transition: all 1s ease;
+    transform: translate3d(0, -180%, 0);
   }
 
   .btn1 {
-    background-image: url("../images/27/btn1.png");
+    &:hover{
+      background-image: url("../images/27/btn2/button.png");
+    }
+    background-image: url("../images/27/btn2/button-1.png");
     right: 3.5rem;
   }
 
   .btn2 {
-    background-image: url("../images/27/btn2.png");
+    &:hover{
+      background-image: url("../images/27/btn2/button.png");
+    }
+    background-image: url("../images/27/btn2/button-1.png");
     right: 5.2rem;
+  }
+  .img {
+    position: absolute;
+    background-size: contain;
+  }
+  .img1 {
+    width: 5.8rem;
+    height: 94px;
+    top: 522px;
+    right: 0;
+    background-image: url("../images/27/img1.png");
+    transition: all 1s ease;
+    transform: translate3d(100%, 0, 0);
+  }
+  .img2 {
+    width: 2rem;
+    height: 200px;
+    top: 442px;
+    left: 1.2rem;
+    background-image: url("../images/27/img2.png");
+    transition: all 1s ease;
+    transform: translate3d(0, 123%, 0);
   }
 }

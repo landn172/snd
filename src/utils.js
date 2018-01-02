@@ -35,6 +35,7 @@ export function getClassPageNumber(className = '') {
  */
 export function isParentSlider(pageNumber, toPageNumber, pagesConfig) {
   const targetSlider = pagesConfig.find(config => config.parentPageNumber === pageNumber);
+  console.log(pageNumber, toPageNumber, pagesConfig, targetSlider);
   if (!targetSlider || targetSlider.pagesArr.indexOf(toPageNumber) === -1) return null;
   return targetSlider;
 }
