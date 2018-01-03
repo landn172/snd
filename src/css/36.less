@@ -1,4 +1,91 @@
+@import "./animate.less";
+.page-active {
+  .page-36 {
+    .bg,
+    .title,
+    .image-text,
+    .image-chart,
+    .image {
+      .animated();
+    }
+    .image-text {
+      animation-delay: .6s;
+    }
+    .image1 {
+      animation-delay: 1.5s;
+    }
+    .image2 {
+      animation-delay: 2s;
+    }
+    .image3 {
+      animation-delay: 2.5s;
+    }
+    .image4 {
+      animation-delay: 3s;
+    }
+    .image-chart {
+      animation-delay: 4s;
+    }
+  }
+}
+
 .page-36 {
-  background: url("../images/36/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    opacity: 0;
+    background: url("../images/36/bg.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,
+  .image,
+  .image-text,
+  .image-chart {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .title {
+    background-image: url("../images/36/title.png");
+    width: .6rem;
+    height: 166px;
+    right: 0.8rem;
+    top: 32px;
+  }
+  .image-text {
+    top: 67px;
+    right: 72px;
+    height: 351px;
+    width: 13px;
+    background-image: url("../images/36/image-text.png");
+  }
+  .image1,
+  .image2,
+  .image3,
+  .image4 {
+    width: 64px;
+    height: 47px;
+    top: 40px;
+  }
+  .image1 {
+    left: 221px;
+    background-image: url("../images/36/image1.png");
+  }
+  .image2 {
+    left: 152px;
+    background-image: url("../images/36/image2.png");
+  }
+  .image3 {
+    left: 83px;
+    background-image: url("../images/36/image3.png");
+  }
+  .image4 {
+    left: 14px;
+    background-image: url("../images/36/image4.png");
+  }
+  .image-chart {
+    top: 90px;
+    left: 15px;
+    width: 274px;
+    height: 538px;
+    background-image: url("../images/36/image-chart.png");
+  }
 }
