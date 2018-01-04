@@ -1,4 +1,142 @@
+@import "./animate.less";
+.page-active {
+  .page-34 {
+    .bg,
+    .title,
+    .text-line,
+    .text,
+    .image {
+      .animated();
+    }
+    .image1 {
+      animation-delay: 1s;
+    }
+    .image2 {
+      animation-delay: 1.5s;
+    }
+    .image3 {
+      animation-delay: 2s;
+    }
+    .text-line {
+      animation-delay: 2.5s;
+    }
+    .text1 {
+      animation-delay: 3.5s;
+    }
+    .text2 {
+      animation-delay: 4s;
+    }
+    .text3 {
+      animation-delay: 4.5s;
+    }
+    .image4 {
+      animation-delay: 5s;
+    }
+    .image5 {
+      animation-delay: 5.5s;
+    }
+    .image6 {
+      animation-delay: 6s;
+    }
+  }
+}
+
 .page-34 {
-  background: url("../images/34/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    opacity: 0;
+    background: url("../images/34/bg.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,
+  .text,
+  .text-line,
+  .image {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .title {
+    background-image: url("../images/34/title.png");
+    width: .6rem;
+    height: 166px;
+    right: 0.8rem;
+    top: 32px;
+  }
+  .text-line {
+    top: 100px;
+    left: 4.4rem;
+    height: 466px;
+    width: 1rem;
+    background-image: url("../images/34/text-line.png");
+  }
+  .text1 {
+    top: 143px;
+    width: 1.6rem;
+    height: 86px;
+    left: 2.8rem;
+    background-image: url("../images/34/text1.png");
+  }
+  .text2 {
+    top: 290px;
+    width: 1.8rem;
+    height: 84px;
+    left: 2.5rem;
+    background-image: url("../images/34/text2.png");
+  }
+  .text3 {
+    top: 433px;
+    width: 1.8rem;
+    height: 82px;
+    left: 2.5rem;
+    background-image: url("../images/34/text3.png");
+  }
+  .text1 {
+    top: 143px;
+    width: 1.6rem;
+    height: 86px;
+    left: 2.8rem;
+    background-image: url("../images/34/text1.png");
+  }
+  .image1 {
+    top: 126px;
+    left: 5.5rem;
+    width: 2.7rem;
+    height: 138px;
+    background-image: url("../images/34/image1.png");
+  }
+  .image2 {
+    top: 276px;
+    left: 5.6rem;
+    width: 2.8rem;
+    height: 142px;
+    background-image: url("../images/34/image2.png");
+  }
+  .image3 {
+    top: 417px;
+    left: 5.4rem;
+    width: 2.8rem;
+    height: 130px;
+    background-image: url("../images/34/image3.png");
+  }
+  .image4 {
+    top: 144px;
+    left: 0.3rem;
+    width: 2.1rem;
+    height: 108px;
+    background-image: url("../images/34/image4.png");
+  }
+  .image5 {
+    top: 280px;
+    left: .6rem;
+    width: 2.1rem;
+    height: 112px;
+    background-image: url("../images/34/image5.png");
+  }
+  .image6 {
+    top: 438px;
+    left: .4rem;
+    width: 2rem;
+    height: 90px;
+    background-image: url("../images/34/image6.png");
+  }
 }
