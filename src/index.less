@@ -1,11 +1,16 @@
 @import "./css/animate.less";
 html,
-body {
+body,
+.wrapper {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
   position: relative;
+}
+
+.wrapper {
+  width: 100%;
 }
 
 html {
@@ -62,7 +67,8 @@ body {
 }
 
 // 当前页样式
-.islider-active {}
+.islider-active {
+}
 
 .btn,
 .circle,
@@ -71,7 +77,7 @@ body {
 }
 
 #back-icon {
-  position: fixed;
+  position: absolute;
   width: 1.2rem;
   height: 1.2rem;
   bottom: 8px;
@@ -82,13 +88,15 @@ body {
   transform: translateZ(0px);
 }
 
-
 @keyframes myFlash {
-  from, 50%, to {
+  from,
+  50%,
+  to {
     opacity: 0;
   }
 
-  25%, 75% {
+  25%,
+  75% {
     opacity: 1;
   }
 }
