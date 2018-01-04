@@ -1,4 +1,113 @@
+@import "./animate.less";
+.page-active {
+  .page-25 {
+    .bg {
+      .animated();
+    }
+    .title,.text1,.text2,.img,.desc1,.desc2,.desc3,.desc4,.desc5{
+      .animated();
+    }
+    .text1 {
+      animation-delay: 0.5s;
+    }
+    .img {
+      animation-delay: 0.8s;
+    }
+    .desc1 {
+      animation-delay: 1.2s;
+    }
+    .desc2 {
+      animation-delay: 1.5s;
+    }
+    .desc3 {
+      animation-delay: 1.8s;
+    }
+    .desc4 {
+      animation-delay: 2.1s;
+    }
+    .desc5 {
+      animation-delay: 2.4s;
+    }
+    .text2 {
+      animation-delay: 2.8s;
+    }
+  }
+}
+
 .page-25 {
-  background: url("../images/25/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    background: url("../images/25/bg1.jpg") center center no-repeat;
+    background-size: 100% 100%;
+    opacity: 0;
+  }
+  .title,.text1,.text2,.img,.desc1,.desc2,.desc3,.desc4,.desc5{
+    background-size: contain;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+  }
+  .title {
+    background-image: url("../images/25/title.png");
+    width: 0.6rem;
+    height: 225px;
+    top: 48px;
+    right: 0.8rem;
+  }
+  .text1 {
+    background-image: url("../images/25/text1.png");
+    width: 0.27rem;
+    height: 347px;
+    top: 48px;
+    right: 2rem;
+  }
+
+  .text2 {
+    background-image: url("../images/25/text2.png");
+    width: 2.4rem;
+    height: 210px;
+    bottom: 45px;
+    left: 0.8rem;
+  }
+
+  .img {
+    background-image: url("../images/25/img.png");
+    width: 5.7rem;
+    height: 160px;
+    top: 263px;
+    left: 0.4rem;
+  }
+  .desc1 {
+    background-image: url("../images/25/desc1.png");
+    width: 3rem;
+    height: 241px;
+    top: 45px;
+    left: 4.3rem;
+  }
+  .desc2 {
+    background-image: url("../images/25/desc2.png");
+    width: 1.9rem;
+    height: 258px;
+    top: 48px;
+    left: 2.85rem;
+  }
+  .desc3 {
+    background-image: url("../images/25/desc3.png");
+    width: 1.6rem;
+    height: 233px;
+    top: 48px;
+    left: 0.7rem;
+  }
+  .desc4 {
+    background-image: url("../images/25/desc4.png");
+    width: 3.55rem;
+    height: 265px;
+    top: 356px;
+    right: 2.7rem;
+  }
+  .desc5 {
+    background-image: url("../images/25/desc5.png");
+    width: 2.4rem;
+    height: 198px;
+    top: 231px;
+    right: 2.2rem;
+  }
 }

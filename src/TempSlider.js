@@ -6,7 +6,7 @@ const defaultConfig = {
   isVertical: 0,
   animateTime: 300,
   initIndex: 0,
-  plugins: [],
+  plugins: ['AddActive'],
   fixPage: false,
 };
 
@@ -60,3 +60,23 @@ function createSliderContainer() {
   document.body.appendChild(container);
   return container;
 }
+
+Islider.regPlugin('AddActive', function (opts) {
+  const $current = $(this.currentEl);
+  const $outer = $(this.outer);
+  const activeClass = 'page-active'
+
+  this.on('renderComplete', () => {
+    $current.addClass(activeClass);
+  });
+
+  this.on('slideChanged', (index, currentEl) => {
+    $outer.find('.islider-html').removeClass(activeClass);
+    setTimeout(() => {
+      $(currentEl).addClass(activeClass);
+    }, 1);
+  });
+  setTimeout(() => {
+    this.fire('renderComplete')
+  }, 0);
+})

@@ -1,4 +1,185 @@
+@import "./animate.less";
+@timer: .5s;
+.page-active {
+  .page-11 {
+    .bg,
+    .title {
+      .animated();
+    }
+    .flip,
+    .flip-left,
+    .flip-right,
+    .step,
+    .image-bg {
+      transform: none;
+      opacity: 1;
+    }
+    .image-arrow,
+    .image {
+      .animated();
+    }
+  }
+}
+
 .page-11 {
-  background: url("../images/11/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    background-image: url("../images/11/bg.jpg");
+    opacity: 0;
+  }
+  .flip,
+  .flip-left,
+  .flip-right,
+  .title {
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .title {
+    position: absolute;
+    width: 0.5rem;
+    height: 160px;
+    right: 0.9rem;
+    top: 38px;
+    background-image: url("../images/11/title.png");
+  }
+  .flip1,
+  .flip2,
+  .flip3 {
+    position: absolute;
+    width: 1.9rem;
+    height: 600px;
+    top: 37px;
+    right: 1rem;
+    opacity: 0;
+    transition: all .3s ease;
+  }
+  .flip1 {
+    right: 1.9rem;
+    background-image: url("../images/11/flip1.png");
+    transition-delay: @timer+.5s;
+  }
+  .flip2 {
+    right: 3.9rem;
+    background-image: url("../images/11/flip2.png");
+    transform: translate(75px, 0);
+    transition-delay: @timer+1s;
+  }
+  .flip3 {
+    right: 5.9rem;
+    background-image: url("../images/11/flip3.png");
+    transform: translate(150px, 0);
+    transition-delay: @timer+1.5s;
+  }
+  .flip-left,
+  .flip-right {
+    opacity: 0;
+    transition: all .3s ease (@timer+2s);
+  }
+  .flip-left {
+    position: absolute;
+    width: 5.9rem;
+    height: 70px;
+    left: 2.2rem;
+    top: 50px;
+    background-image: url("../images/11/flip-left.png");
+  }
+  .flip-right {
+    position: absolute;
+    width: 4.15rem;
+    height: 18px;
+    left: 3.15rem;
+    top: 600px;
+    background-image: url("../images/11/flip-right.png");
+  }
+  .step,
+  .image-bg {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: all .3s ease (@timer+2.5s);
+  }
+  .step1,
+  .step2,
+  .step3 {
+    height: 168px;
+    width: 0.45rem;
+    left: 72px;
+  }
+  .step1 {
+    top: 104px;
+    background-image: url("../images/11/step1.png");
+  }
+  .step2 {
+    top: 254px;
+    width: .5rem;
+    height: 184px;
+    background-image: url("../images/11/step2.png");
+  }
+  .step3 {
+    top: 409px;
+    width: .5rem;
+    height: 202px;
+    background-image: url("../images/11/step3.png");
+  }
+  .image-arrow,
+  .image {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .image-arrow {
+    width: 1.9rem;
+    height: 432px;
+    left: 24px;
+    top: 124px;
+    background-image: url("../images/11/image-arrow.png");
+    animation-delay: @timer+3s;
+  }
+  .image1 {
+    width: 1.4rem;
+    height: 86px;
+    top: 63px;
+    left: 12px;
+    background-image: url("../images/11/image1.png");
+    animation-delay: @timer+3.5s;
+  }
+  .image2 {
+    width: 1rem;
+    height: 46px;
+    top: 148px;
+    left: 34px;
+    background-image: url("../images/11/image2.png");
+    animation-delay: @timer+4s;
+  }
+  .image3 {
+    width: 1.3rem;
+    height: 60px;
+    top: 240px;
+    left: 12px;
+    background-image: url("../images/11/image3.png");
+    animation-delay: @timer+4.5s;
+  }
+  .image4 {
+    width: 1.3rem;
+    height: 60px;
+    top: 389px;
+    left: 12px;
+    background-image: url("../images/11/image4.png");
+    animation-delay: @timer+5s;
+  }
+  .image5 {
+    width: 1.4rem;
+    height: 60px;
+    top: 538px;
+    left: 12px;
+    background-image: url("../images/11/image5.png");
+    animation-delay: @timer+5.5s;
+  }
+  .image-bg {
+    top: 0px;
+    left: 8px;
+    height: 666px;
+    width: 1.7rem;
+    background-image: url("../images/11/image-bg.png");
+  }
 }

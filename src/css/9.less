@@ -1,5 +1,69 @@
-.page-9 {
-  background: url("../images/9/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+@import "./animate.less";
+.page-active {
+  .page-9 {
+    .bg,
+    .title,
+    .frame,
+    .image {
+      .animated();
+    }
+    .title {
+      animation-delay: .3s;
+    }
+    .frame {
+      animation-delay: 1.3s;
+    }
+    .image {
+      animation-delay: 2s;
+    }
+  }
 }
 
+.page-9 {
+  .bg {
+    background-image: url("../images/9/bg.jpg");
+    opacity: 0;
+  }
+  .title {
+    position: absolute;
+    top: 33px;
+    right: 0.8rem;
+    width: 0.6rem;
+    height: 226px;
+    background: url("../images/9/title.png") center center no-repeat;
+    background-size: contain;
+  }
+  .frame {
+    position: absolute;
+    width: 8rem;
+    left: 8px;
+    height: 275px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+  .left-frame {
+    top: 66px;
+    background-image: url("../images/9/left-frame.png");
+  }
+  .right-frame {
+    top: 347px;
+    background-image: url("../images/9/right-frame.png");
+  }
+  .image {
+    position: absolute;
+    width: 7.5rem;
+    left: 10px;
+    height: 272px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .image1 {
+    top: 68px;
+    background-image: url("../images/9/left-image.png");
+  }
+  .image2 {
+    top: 347px;
+    background-image: url("../images/9/right-image.png");
+  }
+}

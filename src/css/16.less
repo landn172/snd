@@ -1,5 +1,5 @@
 @import "./animate.less";
-.islider-active {
+.page-active {
   .page-16 {
     .bg {
       .animated();
@@ -11,8 +11,11 @@
 }
 
 .page-16 {
-  background: url("../images/16/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    opacity: 0;
+    background: url("../images/16/bg.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
   .btn {
     position: absolute;
     width: 1.2rem;

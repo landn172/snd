@@ -1,13 +1,58 @@
+@import "./animate.less";
+.page-active {
+  .page-12 {
+    .bg,
+    .btn,
+    .image {
+      .animated();
+    }
+    .btn {
+      animation-delay: .5s;
+    }
+    .image1 {
+      animation-delay: 1s;
+    }
+    .image2 {
+      animation-delay: 1.5s;
+    }
+  }
+}
+
 .page-12 {
-  background: url("../images/12/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    background-image: url("../images/12/bg.jpg");
+    opacity: 0;
+  }
   .btn {
     position: absolute;
-    width: 1.2rem;
+    width: 0.9rem;
     height: 189px;
     background-size: contain;
     right: 4.4rem;
     top: 102px;
-    background-image: url("../images/12/btn.png");
+    background-image: url("../images/12/button.png");
+    &:hover,
+    &:active {
+      background-image: url("../images/12/button-active.png");
+    }
+  }
+  .image {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .image1 {
+    width: 5.9rem;
+    height: 136px;
+    bottom: 10px;
+    right: 0;
+    background-image: url("../images/12/image1.png");
+  }
+  .image2 {
+    width: 3rem;
+    height: 206px;
+    bottom: 21px;
+    left: 20px;
+    background-image: url("../images/12/image2.png");
   }
 }
