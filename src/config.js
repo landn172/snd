@@ -11,6 +11,7 @@ export const pagesConfig = [
   new SectionSlider([21, 22], 20),
   new SectionSlider(fillSequenceNumber(24, 26), 23),
   new SectionSlider([28, 29], 27),
+  new SectionSlider([30, 31], 29),
   new SectionSlider(fillSequenceNumber(33, 39), 32),
   new SectionSlider(fillSequenceNumber(41, 45), 40),
 ];
@@ -51,6 +52,8 @@ export const eventConfig = {
   '.page-23 .btn3': 26, // 安全工程价值主张
   '.page-27 .btn1': 28, // 电子厂房配电特点
   '.page-27 .btn2': 29, // 电子厂房供电系统架构
+  '.page-29 .btn1': 30, // 
+  '.page-29 .btn2': 31, // 
   '.page-32 .btn1': 33, // 电子厂房配电特点
   '.page-32 .btn2': 36, // 电子厂房供电系统架构
   '.page-32 .btn3': 35, // 安全工程价值主张
