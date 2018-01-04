@@ -1,51 +1,97 @@
+@import "./animate.less";
+.page-active {
+  .page-32 {
+    .bg {
+      .animated();
+    }
+    .btn {
+      transform: none;
+    }
+    .circle {
+      transform: none;
+      .animated();
+      .animated.infinite();
+      animation-duration: 3s;
+      animation-delay: 2.5s;
+    }
+  }
+}
+
 .page-32 {
-  background: url("../images/32/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    opacity: 0;
+    background: url("../images/32/bg.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
   .btn {
     position: absolute;
     width: 1.2rem;
     height: 189px;
     background-size: contain;
     top: 21px;
+    transition: all 1s ease;
+    transform: translate3d(0, -180%, 0);
   }
 
   .btn1 {
-    background-image: url("../images/32/btn1.png");
+    &:hover{
+      background-image: url("../images/32/btn1/button.png");
+    }
+    background-image: url("../images/32/btn1/button-1.png");
     right: 1.8rem;
   }
 
   .btn2 {
-    background-image: url("../images/32/btn2.png");
+    &:hover{
+      background-image: url("../images/32/btn2/button.png");
+    }
+    background-image: url("../images/32/btn2/button-1.png");
     right: 3.5rem;
   }
   .btn3 {
-    background-image: url("../images/32/btn3.png");
+    &:hover{
+      background-image: url("../images/32/btn3/button.png");
+    }
+    background-image: url("../images/32/btn3/button-1.png");
     right: 5.2rem;
   }
 
   .btn4 {
-    background-image: url("../images/32/btn4.png");
+    &:hover{
+      background-image: url("../images/32/btn4/button.png");
+    }
+    background-image: url("../images/32/btn4/button-1.png");
     right: 7rem;
   }
   .circle {
     position: absolute;
     width: 2.4rem;
     height: 2.4rem;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-size: contain;
+    transition: all 1s ease;
+    transform: translate3d(0, 250%, 0);
   }
   .circle1 {
-    background-image: url("../images/32/circle1.png");
+    &:hover{
+      background-image: url("../images/32/circle1/mouseover.png");
+    }
+    background-image: url("../images/32/circle1/button.png");
     bottom: 81px;
     left: 6.2rem;
   }
   .circle2 {
-    background-image: url("../images/32/circle2.png");
+    &:hover{
+      background-image: url("../images/32/circle2/mouseover.png");
+    }
+    background-image: url("../images/32/circle2/button.png");
     bottom: 61px;
     left: 3.8rem;
   }
   .circle3 {
-    background-image: url("../images/32/circle3.png");
+    &:hover{
+      background-image: url("../images/32/circle3/mouseover.png");
+    }
+    background-image: url("../images/32/circle3/button.png");
     bottom: 102px;
     left: 1.4rem;
   }
