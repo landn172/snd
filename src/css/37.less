@@ -1,10 +1,10 @@
 @import "./animate.less";
 @timer: .5s;
-.loop-timer(@n, @i: 1) when(@i<=@n) {
+.loop-timer37(@n, @i: 1) when(@i =< @n) {
   .image@{i} {
     transition-delay: 1+ @i*0.5s;
   }
-  .loop-timer(@n, @i+1);
+  .loop-timer37(@n, (@i+1));
 }
 
 .page-active {
@@ -25,7 +25,7 @@
     .image-text {
       animation-delay: 6s;
     }
-    .loop-timer(9);
+    .loop-timer37(9);
   }
 }
 

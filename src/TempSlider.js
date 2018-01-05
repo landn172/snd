@@ -57,7 +57,8 @@ function proxyApi(ctx) {
 function createSliderContainer() {
   const container = document.createElement('div');
   container.className = 'slider-container';
-  document.body.appendChild(container);
+  document.querySelector('.wrapper').appendChild(container);
+  // document.body.appendChild(container);
   return container;
 }
 
