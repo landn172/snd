@@ -23,6 +23,14 @@ body {
   margin: auto;
 }
 
+.no-animation-name {
+  div {
+    animation-name: none;
+    animation-delay: 0;
+    transition-delay: 0;
+  }
+}
+
 #main-container,
 .slider-container {
   position: absolute;
@@ -52,8 +60,13 @@ body {
 
 .content {
   position: relative;
+  opacity: 0;
   height: 100%;
   width: 100%;
+}
+
+.page-active .content {
+  opacity: 1;
 }
 
 .bg {
