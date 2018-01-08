@@ -4,7 +4,9 @@
     .bg {
       .animated();
     }
-    .title,.text,.img{
+    .title,
+    .text,
+    .img {
       .animated();
     }
   }
@@ -18,6 +20,7 @@
   }
   .title {
     background-image: url("../images/19/title.png");
+    background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
     width: 0.58rem;
@@ -27,6 +30,7 @@
   }
   .text {
     background-image: url("../images/19/text.png");
+    background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
     width: 0.56rem;
@@ -34,8 +38,8 @@
     top: 94px;
     right: 1.9rem;
   }
-  
-  .img{
+
+  .img {
     position: absolute;
     background-size: contain;
   }
@@ -61,5 +65,11 @@
     height: 350px;
     top: 288px;
     left: 0.1rem;
+  }
+
+  @media (max-height: 668px) {
+    .img3 {
+      top: 308px;
+    }
   }
 }

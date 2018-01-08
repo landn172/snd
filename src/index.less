@@ -17,9 +17,11 @@ html {
   font-size: 37.5px;
 }
 
-body {
-  width: 375px;
-  height: 667px;
+.wrapper {
+  // width: 375px;
+  // height: 667px;
+  width: 100%;
+  height: 100%;
   margin: auto;
 }
 
@@ -70,13 +72,16 @@ body {
 }
 
 .bg {
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
   height: 100%;
   width: 100%;
   z-index: 0;
+  &.bg-full {
+    background-size: 100% 100%;
+  }
 }
 
 // 当前页样式
