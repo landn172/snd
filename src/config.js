@@ -24,9 +24,11 @@ export const eventConfig = {
   '.page-2 .btn1': 7, // 安全工厂
   '.page-2 .btn2': 32, // 透明工厂
   '.page-2 .btn3': 40, // 绿色工厂
+  '.page-2 .layer-mask': -1, // 浮层
   '.page-3 .btn1': 4, // 行业趋势
   '.page-3 .btn2': 5, // 行业驱动力
   '.page-3 .btn3': 6, // 电子厂房特征
+  '.page-3 .layer-mask': -1, // 浮层
   '.page-7 .btn1': 8, // 电子厂房配电特点
   '.page-7 .btn2': 9, // 电子厂房供电系统架构
   '.page-7 .btn3': 10, // 安全工程价值主张

@@ -87,7 +87,7 @@ histroyRouter.registerHistory(mainHistory, mainTempSlider);
 
 function clickEventHandle(selector, toPageNumber) {
   const pageNumber = getClassPageNumber(selector);
-  $body.on('click', selector, () => {
+  $body.on('click', selector, (e) => {
     const targetSlider = isParentSlider(pageNumber, toPageNumber, pagesConfig);
     // 如果是在配置中
     if (targetSlider) {
@@ -110,12 +110,15 @@ function clickEventHandle(selector, toPageNumber) {
     } else {
       histroyRouter.slideTo(getRealPageNumber(toPageNumber));
     }
+    e.preventDefault();
   });
 }
 
 const specialConfig = {
   7: [23],
-  13: [-1, 14, 15]
+  13: [-1, 14, 15],
+  2: [-1],
+  3: [-1]
 }
 
 // 特别按钮
@@ -144,6 +147,18 @@ function SpecialClick({
     }
     if (toPageNumber === 15) {
       $('.page-13 .popup-15,.page-13 .mask').addClass('active');
+    }
+  }
+
+  layerMaskEventHandle(pageNumber, toPageNumber, 2);
+  layerMaskEventHandle(pageNumber, toPageNumber, 3);
+}
+
+function layerMaskEventHandle(pageNumber, toPageNumber, number) {
+  if (pageNumber === number) {
+    // .layer-mask
+    if (toPageNumber === -1) {
+      $(`.page-${pageNumber} .layer-mask`).removeClass('active')
     }
   }
 }
