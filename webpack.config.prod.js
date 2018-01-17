@@ -39,15 +39,15 @@ const webpackConfig = merge(config, {
     ],
   },
   plugins: [
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      optipng: {
-        optimizationLevel: 3,
-      },
-      jpegtran: {
-        progressive: true,
-      },
-    }),
+    // new ImageminPlugin({
+    //   test: /\.(jpe?g|png|gif|svg)$/i,
+    //   optipng: {
+    //     optimizationLevel: 3,
+    //   },
+    //   jpegtran: {
+    //     progressive: true,
+    //   },
+    // }),
     new webpack.optimize.UglifyJsPlugin(),
   ],
 });

@@ -26,6 +26,7 @@ function zoomBody() {
   const scaleWith = innerWidth / originalWith;
   const scaleHeight = innerHeight / originalHeight;
 
+  // alert(`${innerWidth},${innerHeight}`);
   // document.body.style["zoom"] = scaleWith > scaleHeight ? scaleHeight : scaleWith;
 
 }
@@ -51,7 +52,7 @@ for (let i = 0; i < pageLen;) {
 
 const $body = $('body');
 const $back = $('#back-icon').hide();
-const initIndex = getRealPageNumber(1); // 初始化index
+const initIndex = getRealPageNumber(7); // 初始化index
 const mainHistory = new HistorySlider(initIndex);
 const histroyRouter = new HistoryRouter();
 
@@ -158,7 +159,8 @@ function layerMaskEventHandle(pageNumber, toPageNumber, number) {
   if (pageNumber === number) {
     // .layer-mask
     if (toPageNumber === -1) {
-      $(`.page-${pageNumber} .layer-mask`).removeClass('active')
+      $(`.page-${pageNumber} .layer-mask`).removeClass('active');
+      $(`.page-${pageNumber}`).removeClass('disable-animate')
     }
   }
 }
