@@ -52,7 +52,7 @@ for (let i = 0; i < pageLen;) {
 
 const $body = $('body');
 const $back = $('#back-icon').hide();
-const initIndex = getRealPageNumber(28); // 初始化index
+const initIndex = getRealPageNumber(1); // 初始化index
 const mainHistory = new HistorySlider(initIndex);
 const histroyRouter = new HistoryRouter();
 
@@ -99,7 +99,7 @@ function clickEventHandle(selector, toPageNumber) {
         sectionSlider
       } = InitSectionSlider(
         sliderData,
-        getRealPageNumber(sliderIndex, sliderData.length) - 1,
+        getRealPageNumber(sliderIndex, sliderData.length) - 1
       );
       console.log(pageNumber, toPageNumber);
       histroyRouter.registerHistory(sectionHistory, sectionSlider);

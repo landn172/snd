@@ -8,7 +8,7 @@
       .animated();
     }
     .title {
-      animation-delay: .3s;
+      animation-delay: 0.3s;
     }
     .frame {
       animation-delay: 1.3s;
@@ -41,6 +41,18 @@
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
+  }
+  .layer-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-height: 666px) {
+    .layer-wrap {
+      top: -40px;
+    }
   }
   .left-frame {
     top: 66px;
