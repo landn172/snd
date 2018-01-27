@@ -99,7 +99,7 @@ function clickEventHandle(selector, toPageNumber) {
         sectionSlider
       } = InitSectionSlider(
         sliderData,
-        getRealPageNumber(sliderIndex, sliderData.length) - 1,
+        getRealPageNumber(sliderIndex, sliderData.length) - 1
       );
       console.log(pageNumber, toPageNumber);
       histroyRouter.registerHistory(sectionHistory, sectionSlider);

@@ -3,7 +3,8 @@
 .page-active {
   .page-48 {
     .bg,
-    .img {
+    .img,
+    .title {
       .animated();
     }
     .generate-img(12);
@@ -17,16 +18,28 @@
 }
 
 .page-48 {
-  background: url("../images/48/bg.jpg") center center no-repeat;
-  background-size: 100% 100%;
+  .bg {
+    background: url("../images/48/bg.jpg");
+    opacity: 0;
+  }
+  .title {
+    position: absolute;
+    width: 1rem;
+    height: 12rem;
+    top: 2rem;
+    right: .3rem;
+    background: url("../images/48/title.png") center center no-repeat;
+    background-size: contain;
+    z-index: 2;
+  }
   .img-wrap {
     position: absolute;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 7.2rem;
-    height: 100%;
-    top: 77px;
+    height: 526px;
+    top: 2rem;
     left: .1rem;
   }
   .img {
@@ -34,7 +47,7 @@
     height: 3rem;
     background-repeat: no-repeat;
     background-size: contain;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     transition: all 0.3s ease-in-out;
   }
   .img1 {
