@@ -70,4 +70,5 @@ export const eventConfig = {
   '.page-40 .circle': 45, // 安全工厂解决方案
   '.page-46 .btn1': 47, // 电子厂房配电特点
   '.page-46 .btn2': 48, // 电子厂房供电系统架构
+  '.page-46 .circle': -1, // video
 };
