@@ -11,7 +11,7 @@
       .animated();
     }
     .title {
-      animation-delay: .3s;
+      animation-delay: 0.3s;
     }
     .image-14 {
       animation: scale2 4s linear infinite;
@@ -20,7 +20,7 @@
       animation: scale2 4s linear infinite;
     }
     .image-ic {
-      animation-delay: .5s;
+      animation-delay: 0.5s;
     }
     .text {
       animation-delay: 1s;
@@ -45,7 +45,7 @@
     transform: scale(1.1);
   }
   75% {
-    transform: scale(.9);
+    transform: scale(0.9);
   }
   100% {
     transform: scale(1);
@@ -71,34 +71,34 @@
   }
   .title {
     top: 33px;
-    width: .7rem;
+    width: 0.7rem;
     height: 250px;
     right: 0.7rem;
     background-image: url("../images/13/title.png");
   }
   .image-ic {
-    top: 124px;
-    right: 1.8rem;
+    top: 54px;
+    right: 1.2rem;
     width: 4.4rem;
-    height: 430px;
+    height: 550px;
     background-image: url("../images/13/image-ic.png");
   }
   .text {
     top: 131px;
-    left: 3.3rem;
+    left: 3.6rem;
     width: 0.3rem;
     height: 398px;
     background-image: url("../images/13/text.png");
   }
   .image-ci-center {
     top: 214px;
-    left: 3px;
+    left: 0.3rem;
     width: 2.6rem;
     height: 242px;
     background-image: url("../images/13/image-ci-center.png");
   }
   .image-14-wrap {
-    left: 1.7rem;
+    left: 1.8rem;
     width: 1rem;
     height: 50px;
   }
@@ -115,7 +115,7 @@
   }
   .image-15-wrap {
     top: 312px;
-    left: 0.1rem;
+    left: 0.2rem;
     width: 1.2rem;
     height: 50px;
   }
@@ -123,6 +123,18 @@
     width: 100%;
     height: 100%;
     background-image: url("../images/13/image-15.png");
+  }
+  .layer-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-height: 666px) {
+    .layer-wrap {
+      top: -20px;
+    }
   }
   .mask {
     position: absolute;
@@ -132,10 +144,10 @@
     bottom: 0;
     background: #000;
     opacity: 0;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     pointer-events: none;
     &.active {
-      opacity: .6;
+      opacity: 0.6;
       pointer-events: all;
     }
   }
@@ -148,7 +160,7 @@
     height: 590px;
     background-size: contain;
     background-repeat: no-repeat;
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     pointer-events: none;
     &.active {
       transform: translate(-50%, -50%) scale(1);

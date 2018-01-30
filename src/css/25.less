@@ -4,7 +4,15 @@
     .bg {
       .animated();
     }
-    .title,.text1,.text2,.img,.desc1,.desc2,.desc3,.desc4,.desc5{
+    .title,
+    .text1,
+    .text2,
+    .img,
+    .desc1,
+    .desc2,
+    .desc3,
+    .desc4,
+    .desc5 {
       .animated();
     }
     .text1 {
@@ -40,10 +48,19 @@
     background-size: 100% 100%;
     opacity: 0;
   }
-  .title,.text1,.text2,.img,.desc1,.desc2,.desc3,.desc4,.desc5{
+  .title,
+  .text1,
+  .text2,
+  .img,
+  .desc1,
+  .desc2,
+  .desc3,
+  .desc4,
+  .desc5 {
     background-size: contain;
     position: absolute;
     transition: all 0.3s ease-in-out;
+    background-repeat: no-repeat;
   }
   .title {
     background-image: url("../images/25/title.png");
@@ -109,5 +126,13 @@
     height: 198px;
     top: 231px;
     right: 2.2rem;
+  }
+  @media (max-height: 666px) {
+    .desc4 {
+      width: 3.1rem;
+    }
+    .text2 {
+      bottom: 15px;
+    }
   }
 }

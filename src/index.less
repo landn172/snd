@@ -17,9 +17,11 @@ html {
   font-size: 37.5px;
 }
 
-body {
-  width: 375px;
-  height: 667px;
+.wrapper {
+  // width: 375px;
+  // height: 667px;
+  width: 100%;
+  height: 100%;
   margin: auto;
 }
 
@@ -70,13 +72,16 @@ body {
 }
 
 .bg {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-size: 100% 100%!important;
+  background-repeat: no-repeat!important;
+  background-position: center center!important;
   position: absolute;
   height: 100%;
   width: 100%;
   z-index: 0;
+  &.bg-full {
+    background-size: 100% 100%;
+  }
 }
 
 // 当前页样式
@@ -93,12 +98,31 @@ body {
   position: absolute;
   width: 1.2rem;
   height: 1.2rem;
-  bottom: 8px;
-  right: 0.5rem;
+
+  // bottom: 8px;
+  // right: 0.5rem;
+  bottom: 3px;
+  right: 0.3rem;
   background: url("./images/back.png") center center no-repeat;
   background-size: contain;
-  z-index: 9999;
+  z-index: 10;
   transform: translateZ(0px);
+}
+
+.pulseBig {
+  animation-name: pulseBig;
+}
+
+@keyframes pulseBig {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.5, 1.5, 1.5);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 @keyframes myFlash {

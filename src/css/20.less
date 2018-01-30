@@ -4,7 +4,8 @@
     .bg {
       .animated();
     }
-    .btn,.img{
+    .btn,
+    .img {
       transform: none;
     }
   }
@@ -26,17 +27,17 @@
     transform: translate3d(0, -180%, 0);
   }
   .btn1 {
-    &:hover{
-      background-image: url("../images/20/btn1/button.png");
+    &:hover {
+      background-image: url("../images/20/over0.png");
     }
-    background-image: url("../images/20/btn1/button-1.png");
+    background-image: url("../images/20/nor0.png");
     right: 3.5rem;
   }
   .btn2 {
-    &:hover{
-      background-image: url("../images/20/btn2/button.png");
+    &:hover {
+      background-image: url("../images/20/over1.png");
     }
-    background-image: url("../images/20/btn1/button-1.png");
+    background-image: url("../images/20/nor1.png");
     right: 5.2rem;
   }
 
@@ -55,11 +56,21 @@
   }
   .img2 {
     width: 2.8rem;
-    height: 284px;
-    top: 442px;
+    height: 224px;
+    bottom: 20px;
     left: 0.5rem;
     background-image: url("../images/20/img2.png");
     transition: all 1s ease;
     transform: translate3d(0, 120%, 0);
+  }
+  @media (max-height: 666px) {
+    .img1 {
+      top: 472px;
+    }
+    .img2 {
+      height: 204px;
+      width: 2.6rem;
+      bottom: 0;
+    }
   }
 }

@@ -4,7 +4,8 @@
     .bg {
       .animated();
     }
-    .btn,.img{
+    .btn,
+    .img {
       transform: none;
     }
   }
@@ -27,18 +28,18 @@
   }
 
   .btn1 {
-    &:hover{
-      background-image: url("../images/27/btn2/button.png");
+    &:hover {
+      background-image: url("../images/27/over0.png");
     }
-    background-image: url("../images/27/btn2/button-1.png");
+    background-image: url("../images/27/nor0.png");
     right: 3.5rem;
   }
 
   .btn2 {
-    &:hover{
-      background-image: url("../images/27/btn2/button.png");
+    &:hover {
+      background-image: url("../images/27/over1.png");
     }
-    background-image: url("../images/27/btn2/button-1.png");
+    background-image: url("../images/27/nor1.png");
     right: 5.2rem;
   }
   .img {
@@ -48,7 +49,7 @@
   .img1 {
     width: 5.8rem;
     height: 94px;
-    top: 522px;
+    bottom: 40px;
     right: 0;
     background-image: url("../images/27/img1.png");
     transition: all 1s ease;
@@ -57,10 +58,19 @@
   .img2 {
     width: 2rem;
     height: 200px;
-    top: 442px;
+    bottom: 30px;
     left: 1.2rem;
     background-image: url("../images/27/img2.png");
     transition: all 1s ease;
     transform: translate3d(0, 123%, 0);
+  }
+  @media (max-height: 666px) {
+    .img1 {
+      bottom: 30px;
+    }
+    .img2 {
+      height: 180px;
+      bottom: 10px;
+    }
   }
 }
