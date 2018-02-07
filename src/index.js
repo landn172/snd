@@ -19,7 +19,7 @@ import './video/video.mp4'
 FastClick.attach(document.body);
 
 function zoomBody() {
-  const [originalWith, originalHeight] = [375, 667];
+  const [originalWith, originalHeight] = [375, 603];
   const {
     innerWidth,
     innerHeight
@@ -28,8 +28,16 @@ function zoomBody() {
   const scaleHeight = innerHeight / originalHeight;
 
   // alert(`${innerWidth},${innerHeight}`);
+  const scaleValue = scaleWith > scaleHeight ? scaleHeight : scaleWith;
+  console.log(scaleHeight, scaleWith)
   // document.body.style["zoom"] = scaleWith > scaleHeight ? scaleHeight : scaleWith;
-
+  const style = $('.wrapper')[0].style
+  const targeHeight = scaleValue * originalHeight
+  let translateValue = ''
+  if (targeHeight < innerHeight) {
+    translateValue = `translateY(${~~(innerHeight-targeHeight)/2}px)`
+  }  console.log(translateValue)
+  style['transform'] = style['webkitTransform'] = `${translateValue} scale(${scaleValue})`
 }
 
 window.addEventListener('resize', zoomBody)
@@ -144,12 +152,15 @@ function SpecialClick({
     // mask 弹窗
     if (toPageNumber === -1) {
       $('.page-13 .popup,.page-13 .mask').removeClass('active');
+      $back.show()
     }
     if (toPageNumber === 14) {
       $('.page-13 .popup-14,.page-13 .mask').addClass('active');
+      $back.hide()
     }
     if (toPageNumber === 15) {
       $('.page-13 .popup-15,.page-13 .mask').addClass('active');
+      $back.hide()
     }
   }
   // video play
