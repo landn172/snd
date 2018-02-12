@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node ./server.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js --progress --hide-modules",
-    "server":"http-server ./dist"
+    "server": "http-server ./dist"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "express-ejs-layouts": "^2.3.1",
     "express-less-middleware": "^1.4.5",
     "islider.js": "^2.2.2",
+    "progressbar.js": "^1.0.1",
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^2.0.1",
     "webpack-dev-server": "^2.9.7",

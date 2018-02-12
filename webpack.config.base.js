@@ -3,9 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const WebpackAssetsManifest = require('webpack-assets-manifest');
 
 const config = {
-  entry: ['./src/index.js'],
+  entry: ['./src/preload.js', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     // publicPath: '/',
@@ -13,8 +14,7 @@ const config = {
   },
   devtool: 'inline-source-map',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
@@ -36,23 +36,19 @@ const config = {
       },
       {
         test: /\.(html|ejs)$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: {},
-          },
-        ],
+        use: [{
+          loader: 'html-loader',
+          options: {},
+        }, ],
       },
       {
         test: /\.(png|jpg|gif|mp4)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-            },
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
           },
-        ],
+        }, ],
       },
     ],
   },
@@ -77,6 +73,7 @@ const config = {
     new ExtractTextPlugin({
       filename: 'common.[hash:7].css',
     }),
+    new WebpackAssetsManifest()
   ],
 };
 
