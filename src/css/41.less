@@ -1,0 +1,92 @@
+@import "./animate.less";
+.page-active {
+  .page-41 {
+    .bg,
+    .title,
+    .image {
+      .animated();
+    }
+    .image1 {
+      animation-delay: 1s;
+    }
+    .image2 {
+      animation-delay: 1.5s;
+    }
+    .image3 {
+      animation-delay: 2s;
+    }
+    .image4 {
+      animation-delay: 2.5s;
+    }
+    .image-txt1 {
+      animation-delay: 3s;
+    }
+    .image-txt2 {
+      animation-delay: 3.5s;
+    }
+  }
+}
+
+.page-41 {
+  .bg {
+    opacity: 0;
+    background: url("../images/41/bg.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,
+  .image,
+  .image-text {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .title {
+    background-image: url("../images/41/title.png");
+    width: 0.6rem;
+    height: 166px;
+    right: 0.8rem;
+    top: 32px;
+  }
+  .image1 {
+    top: 30px;
+    left: 217px;
+    width: 90px;
+    height: 310px;
+    background-image: url("../images/41/image1.png");
+  }
+  .image2,
+  .image4,
+  .image3 {
+    width: 186px;
+    height: 110px;
+  }
+  .image2 {
+    top: 25px;
+    left: 17px;
+    background-image: url("../images/41/image2.png");
+  }
+  .image3 {
+    top: 126px;
+    left: 17px;
+    background-image: url("../images/41/image3.png");
+  }
+  .image4 {
+    top: 236px;
+    left: 17px;
+    background-image: url("../images/41/image4.png");
+  }
+  .image-txt1 {
+    top: 350px;
+    left: 186px;
+    width: 90px;
+    height: 244px;
+    background-image: url("../images/41/image-txt1.png");
+  }
+  .image-txt2 {
+    top: 350px;
+    left: 29px;
+    width: 113px;
+    height: 153px;
+    background-image: url("../images/41/image-txt2.png");
+  }
+}

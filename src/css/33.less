@@ -1,0 +1,134 @@
+@import "./animate.less";
+.page-active {
+  .page-33 {
+    .bg,
+    .title,
+    .chart-wrap,
+    .image-wrap::before,
+    .chart-line::before {
+      .animated();
+    }
+    .chart-wrap {
+      animation-delay: 1s;
+    }
+    .image-wrap::before {
+      .fadeInLeft();
+    }
+    .chart-line::before{
+      .fadeInDown();
+      animation-delay: 1.5s;
+    }
+  }
+}
+
+.page-33 {
+  .bg {
+    opacity: 0;
+    background: url("../images/33/bg.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,
+  .chart-wrap,
+  .chart-line,
+  .image-wrap {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .title {
+    background-image: url("../images/33/title.png");
+    width: .6rem;
+    height: 249px;
+    right: 0.8rem;
+    top: 32px;
+  }
+  .chart-wrap {
+    background-image: url("../images/33/chart.png");
+    width: 5.8rem;
+    height: 556px;
+    left: 1.4rem;
+    top: 21px;
+  }
+  .chart-line {
+    width: 2rem;
+    height: 498px;
+    top: 69px;
+    left: 5.2rem;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("../images/33/chart-line.png");
+    }
+  }
+  .image-wrap {
+    left: 1.78rem;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  .image-wrap1 {
+    width: 1.3rem;
+    height: 84px;
+    top: 69px;
+    &::before {
+      background-image: url(../images/33/image1.png);
+      animation-delay: 2s;
+    }
+  }
+  .image-wrap2 {
+    width: 1.8rem;
+    height: 92px;
+    top: 151px;
+    &::before {
+      background-image: url(../images/33/image2.png);
+      animation-delay: 2.5s;
+    }
+  }
+  .image-wrap3 {
+    width: 2.4rem;
+    height: 87px;
+    top: 241px;
+    &::before {
+      background-image: url(../images/33/image3.png);
+      animation-delay: 3s;
+    }
+  }
+  .image-wrap4 {
+    width: 3.2rem;
+    height: 88px;
+    top: 326px;
+    &::before {
+      background-image: url(../images/33/image4.png);
+      animation-delay: 3.5s;
+    }
+  }
+  .image-wrap5 {
+    width: 3.7rem;
+    height: 81px;
+    top: 413px;
+    &::before {
+      background-image: url(../images/33/image5.png);
+      animation-delay: 4s;
+    }
+  }
+  .image-wrap6 {
+    width: 4rem;
+    height: 85px;
+    top: 492px;
+    &::before {
+      background-image: url(../images/33/image6.png);
+      animation-delay: 4.5s;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import "./animate.less";
+.page-active {
+  .page-6 {
+    .bg {
+      .animated();
+    }
+    .image {
+      .animated();
+    }
+    .image2 {
+      animation-delay: 0.5s;
+    }
+    .image3 {
+      animation-delay: 1s;
+    }
+  }
+}
+
+.page-6 {
+  .bg {
+    background-image: url("../images/6/bg.jpg");
+    opacity: 0;
+  }
+  .image {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .image1 {
+    top: 10px;
+    width: 3rem;
+    height: 224px;
+    left: 1.4rem;
+    background-image: url("../images/6/image1.png");
+  }
+  .image2 {
+    top: 230px;
+    width: 5.8rem;
+    height: 270px;
+    left: 1.4rem;
+    background-image: url("../images/6/image2.png");
+  }
+  .image3 {
+    top: 499px;
+    width: 6.3rem;
+    height: 157px;
+    left: 1.5rem;
+    background-image: url("../images/6/image3.png");
+  }
+}
+// @media (max-height: 666px) {
+  .page-6 {
+    zoom: 0.9;
+  }
+// }

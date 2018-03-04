@@ -1,0 +1,73 @@
+@import "./animate.less";
+@timer: 0.3s;
+.loop-line(@n,@i:1) when (@i =< @n) {
+  .line@{i} {
+    animation-delay: @timer+@i*.3;
+  }
+  .loop-line(@n,@i+1);
+}
+.page-active {
+  .page-8 {
+    .bg {
+      .animated();
+    }
+    .line {
+      .animated();
+    }
+    .loop-line(6);
+  }
+}
+
+.page-8 {
+  .bg {
+    background-image: url("../images/8/bg.jpg");
+    opacity: 0;
+  }
+  .line {
+    position: absolute;
+    width: 1rem;
+    height: 345px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .line1 {
+    background-image: url("../images/8/line1.png");
+    top: 27px;
+    right: 2.1rem;
+  }
+  .line2 {
+    background-image: url("../images/8/line2.png");
+    top: 80px;
+    right: 3.4rem;
+  }
+  .line3 {
+    background-image: url("../images/8/line3.png");
+    top: 120px;
+    right: 4.7rem;
+  }
+  .line4 {
+    background-image: url("../images/8/line4.png");
+    top: 163px;
+    right: 6.1rem;
+  }
+  .line5 {
+    background-image: url("../images/8/line5.png");
+    top: 203px;
+    right: 7.4rem;
+  }
+  .line6 {
+    background-image: url("../images/8/line6.png");
+    top: 246px;
+    right: 8.7rem;
+  }
+  .title {
+    position: absolute;
+    top: 30px;
+    width: 0.8rem;
+    height: 200px;
+    right: 0.7rem;
+    background: url("../images/8/title.png") center center no-repeat;
+    background-size: contain;
+  }
+}

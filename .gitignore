@@ -1,0 +1,7 @@
+dist/
+node_modules/
+cache/
+.DS_Store
+.idea/
+dist.zip
+.cache/

@@ -1,0 +1,51 @@
+@import "./animate.less";
+.page-active {
+  .page-38 {
+    .bg,
+    .title,
+    .image {
+      .animated();
+    }
+    .image1 {
+      animation-delay: .8s;
+    }
+    .image2 {
+      animation-delay: 1.5s;
+    }
+  }
+}
+
+.page-38 {
+  .bg {
+    opacity: 0;
+    background: url("../images/38/bg.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,
+  .image {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .title {
+    background-image: url("../images/38/title.png");
+    width: .6rem;
+    height: 400px;
+    right: 0.7rem;
+    top: 32px;
+  }
+  .image1 {
+    top: 25px;
+    left: 110px;
+    width: 200px;
+    height: 231px;
+    background-image: url("../images/38/image1.png");
+  }
+  .image2 {
+    top: 271px;
+    left: 45px;
+    width: 284px;
+    height: 320px;
+    background-image: url("../images/38/image2.png");
+  }
+}

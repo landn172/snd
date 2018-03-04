@@ -1,0 +1,103 @@
+@import "./animate.less";
+@timer: 0.3s;
+.page-active {
+  .page-44 {
+    .bg,.title,.text,.img {
+      .animated();
+    }
+    .title {
+      animation-delay: @timer;
+    }
+    .text {
+      animation-delay: @timer+0.3;
+    }
+    .img1 {
+      animation-delay: @timer+0.6;
+    }
+    .img2 {
+      animation-delay: @timer+0.9;
+    }
+    .img3 {
+      animation-delay: @timer+1.2;
+    }
+    .img4 {
+      animation-delay: @timer+1.5;
+    }
+    .img5 {
+      animation-delay: @timer+1.8;
+    }
+    .img6 {
+      animation-delay: @timer+2.1;
+    }
+  }
+}
+
+.page-44 {
+  background: url("../images/44/bg1.jpg") center center no-repeat;
+  background-size: 100% 100%;
+  
+  .title,
+  .text,
+  .img {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 0.3s ease-in-out;
+  }
+  .title {
+    background-image: url("../images/44/title.png");
+    width: 0.6rem;
+    height: 430px;
+    top: 30px;
+    right: 0.8rem;
+  }
+  .text {
+    background-image: url("../images/44/text.png");
+    width: 0.23rem;
+    height: 180px;
+    top: 70px;
+    right: 1.9rem;
+  }
+  .img1 {
+    background-image: url("../images/44/img1.png");
+    width: 2.2rem;
+    height: 556px;
+    right: 2.3rem;
+    top: 25px;
+  }
+  .img2 {
+    background-image: url("../images/44/img2.png");
+    width: 2.2rem;
+    height: 556px;
+    right: 4.8rem;
+    top: 25px;
+  }
+  .img3 {
+    background-image: url("../images/44/img3.png");
+    width: 2.2rem;
+    height: 556px;
+    right: 7.3rem;
+    top: 25px;
+  }
+  .img4 {
+    background-image: url("../images/44/img4.png");
+    width: 7.2rem;
+    height: 80px;
+    right: 2.3rem;
+    top: 50px;
+  }
+  .img5 {
+    background-image: url("../images/44/img5.png");
+    width: 5.8rem;
+    height: 25px;
+    right: 2.5rem;
+    top: 550px;
+  }
+  .img6 {
+    background-image: url("../images/44/img6.png");
+    width: 1.1rem;
+    height: 52px;
+    right: 4rem;
+    top: 490px;
+  }
+}

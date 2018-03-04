@@ -1,0 +1,76 @@
+@import "./animate.less";
+.page-active {
+  .page-27 {
+    .bg {
+      .animated();
+    }
+    .btn,
+    .img {
+      transform: none;
+    }
+  }
+}
+
+.page-27 {
+  .bg {
+    background: url("../images/27/bg1.jpg") center center no-repeat;
+    background-size: 100% 100%;
+    opacity: 0;
+  }
+  .btn {
+    position: absolute;
+    width: 1.2rem;
+    height: 189px;
+    background-size: contain;
+    top: 102px;
+    transition: all 1s ease;
+    transform: translate3d(0, -180%, 0);
+  }
+
+  .btn1 {
+    &:hover {
+      background-image: url("../images/27/over0.png");
+    }
+    background-image: url("../images/27/nor0.png");
+    right: 3.5rem;
+  }
+
+  .btn2 {
+    &:hover {
+      background-image: url("../images/27/over1.png");
+    }
+    background-image: url("../images/27/nor1.png");
+    right: 5.2rem;
+  }
+  .img {
+    position: absolute;
+    background-size: contain;
+  }
+  .img1 {
+    width: 5.8rem;
+    height: 94px;
+    bottom: 40px;
+    right: 0;
+    background-image: url("../images/27/img1.png");
+    transition: all 1s ease;
+    transform: translate3d(100%, 0, 0);
+  }
+  .img2 {
+    width: 2rem;
+    height: 200px;
+    bottom: 30px;
+    left: 1.2rem;
+    background-image: url("../images/27/img2.png");
+    transition: all 1s ease;
+    transform: translate3d(0, 123%, 0);
+  }
+  // @media (max-height: 666px) {
+    .img1 {
+      bottom: 30px;
+    }
+    .img2 {
+      height: 180px;
+      bottom: 10px;
+    }
+  // }
+}

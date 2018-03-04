@@ -1,0 +1,120 @@
+@import "./animate.less";
+@timer: 0.3s;
+.page-active {
+  .page-31 {
+    .bg {
+      .animated();
+    }
+    .title,.text,.product,.img1,.img2,.img3,.img4{
+      .animated();
+    }
+    .title{
+      animation-delay: @timer;
+    }
+    .text {
+      animation-delay: @timer+0.3;
+    }
+    .product {
+      animation-delay: @timer+0.6;
+    }
+    .img1 {
+      animation-delay: @timer+0.9;
+    }
+    .img2 {
+      animation-delay: @timer+1.2;
+    }
+    .img3 {
+      animation-delay: @timer+1.5;
+    }
+    .img4 {
+      animation-delay: @timer+1.8;
+    }
+  }
+}
+
+.page-31 {
+  .bg {
+    opacity: 0;
+    background: url("../images/31/bg1.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,.text,.product,.img1,.img2,.img3,.img4{
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+  }
+  .title {
+    background-image: url("../images/31/title.png");
+    width: 1.95rem;
+    height: 216px;
+    top: 110px;
+    right: 4rem;
+  }
+  .text {
+    background-image: url("../images/31/text.png");
+    width: 0.58rem;
+    height: 192px;
+    bottom: 108px;
+    right: 0.65rem;
+  }
+  .product {
+    background-image: url("../images/31/product.png");
+    width: 2.4rem;
+    height: 116px;
+    bottom: 167px;
+    right: 3.56rem;
+  }
+  .img1 {
+    background-image: url("../images/31/img1.png");
+    width: 2.28rem;
+    height: 168px;
+    bottom: 120px;
+    right: 1.3rem;
+  }
+  .img2 {
+    background-image: url("../images/31/img2.png");
+    width: 2rem;
+    height: 55px;
+    bottom: 120px;
+    left: 4.3rem;
+  }
+  .img3 {
+    background-image: url("../images/31/img3.png");
+    width: 3.2rem;
+    height: 55px;
+    bottom: 142px;
+    left: 0.75rem;
+    animation-name: myFadeInLeftDown;
+  }
+  .img4 {
+    background-image: url("../images/31/img4.png");
+    width: 3.3rem;
+    height: 64px;
+    bottom: 216px;
+    left: 0.65rem;
+  }
+  // @media (max-height: 666px) {
+    .title {
+      top: 80px;
+    }
+    .text {
+      bottom: 78px;
+    }
+    .product {
+      bottom: 137px;
+    }
+    .img1 {
+      bottom: 90px;
+    }
+    .img2 {
+      bottom: 90px;
+    }
+    .img3 {
+      bottom: 112px;
+    }
+    .img4 {
+      bottom: 186px;
+    }
+  // }
+}

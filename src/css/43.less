@@ -1,0 +1,60 @@
+@import "./animate.less";
+.page-active {
+  .page-43 {
+    .bg,
+    .title,
+    .image {
+      .animated();
+    }
+    .image1 {
+      animation-delay: 1s;
+    }
+    .image2 {
+      animation-delay: 1.5s;
+    }
+    .image3 {
+      animation-delay: 2s;
+    }
+  }
+}
+.page-43 {
+  .bg {
+    opacity: 0;
+    background: url("../images/43/bg.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,
+  .image {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .title {
+    background-image: url("../images/43/title.png");
+    width: 0.6rem;
+    height: 291px;
+    right: 0.8rem;
+    top: 30px;
+  }
+  .image1 {
+    background-image: url("../images/43/image1.png");
+    top: 84px;
+    left: 252px;
+    width: 43px;
+    height: 442px;
+  }
+  .image2 {
+    background-image: url("../images/43/image2.png");
+    top: 64px;
+    left: 166px;
+    width: 90px;
+    height: 487px;
+  }
+  .image3 {
+    background-image: url("../images/43/image3.png");
+    top: 24px;
+    left: 20px;
+    width: 150px;
+    height: 563px;
+  }
+}

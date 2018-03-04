@@ -1,0 +1,174 @@
+@import "./animate.less";
+.page-active {
+  .page-7 {
+    .bg {
+      .animated();
+    }
+    .set {
+      .animated();
+      .animated.infinite();
+      animation-duration: 2s;
+    }
+    .set3 {
+      animation-delay: 0.6s;
+    }
+    // .set4 {
+    //   animation-delay: 1.2s;
+    // }
+    // .set5 {
+    //   animation-delay: 1.8s;
+    // }
+    .set6 {
+      animation-delay: 1.2s;
+    }
+    .set7 {
+      animation-delay: 1.8s;
+    }
+    .set8,
+    .set9 {
+      animation-delay: 2.2s;
+    }
+  }
+}
+
+.page-7 {
+  .bg {
+    //background-image: url("../images/7/mask.png");
+    opacity: 0;
+    // background: url("../images/7/mask.png") center center no-repeat;
+    background-color: black;
+    background-size: 100% 100%;
+  }
+  .logo {
+    background: url("../images/7/logo.png") center center no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 14px;
+    right: 0.2rem;
+    width: 1.3rem;
+    height: 153px;
+  }
+  .cf {
+    background-image: url("../images/7/cf.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: contain;
+    right: 20px;
+    top: 109px;
+    width: 10.6rem;
+    height: 578px;
+  }
+  .btn {
+    position: absolute;
+    width: 0.9rem;
+    height: 124px;
+    background-size: contain;
+  }
+  .btn1 {
+    right: 2.6rem;
+    top: 14px;
+    background-image: url("../images/7/nor0.png");
+    &:hover {
+      background-image: url("../images/7/over0.png");
+    }
+  }
+  .btn2 {
+    right: 3.7rem;
+    top: 14px;
+    background-image: url("../images/7/nor1.png");
+    &:hover {
+      background-image: url("../images/7/over1.png");
+    }
+  }
+  .btn3 {
+    right: 4.8rem;
+    top: 14px;
+    background-image: url("../images/7/nor2.png");
+    &:hover {
+      background-image: url("../images/7/over2.png");
+    }
+  }
+  .btn4 {
+    right: 6rem;
+    top: 14px;
+    background-image: url("../images/7/nor3.png");
+    &:hover {
+      background-image: url("../images/7/over3.png");
+    }
+  }
+  .set {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .set3 {
+    right: 5.45rem;
+    top: 119px;
+    width: 2rem;
+    height: 130px;
+    background-image: url("../images/7/set3.png");
+  }
+  .set4 {
+    right: 7.25rem;
+    top: 223px;
+    width: 2.3rem;
+    height: 124px;
+    background-image: url("../images/7/set4.png");
+  }
+  .set5 {
+    right: 6.2rem;
+    top: 436px;
+    width: 2.7rem;
+    height: 146px;
+    background-image: url("../images/7/set5.png");
+  }
+  .set6 {
+    right: 4.7rem;
+    top: 311px;
+    width: 2rem;
+    height: 110px;
+    background-image: url("../images/7/set6.png");
+  }
+  .set7 {
+    right: 2.25rem;
+    top: 358px;
+    width: 2.8rem;
+    height: 108px;
+    background-image: url("../images/7/set7.png");
+  }
+  .set8 {
+    right: 3.25rem;
+    top: 167px;
+    width: 2rem;
+    height: 3.4rem;
+    background-image: url("../images/7/set8.png");
+  }
+  .set9 {
+    right: 5.35rem;
+    top: 392px;
+    width: 2.4rem;
+    height: 4rem;
+    background-image: url("../images/7/set9.png");
+  }
+  .cf,
+  .set7 {
+    transition: all 1s linear;
+  }
+  &.active {
+    .btn {
+      opacity: 0;
+    }
+    .set {
+      opacity: 0;
+      animation: none;
+    }
+    .set7,
+    .cf {
+      transform: translate3d(-60px, -170px, 0px) skew(13deg) scale(6, 8);
+      animation: none;
+    }
+    .set7 {
+      opacity: 0.1;
+    }
+  }
+}

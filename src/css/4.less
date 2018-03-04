@@ -1,0 +1,157 @@
+@import "./animate.less";
+@timer: 0.5s;
+.page-active {
+  .page-4 {
+    .marker,
+    .image,
+    .text,
+    .tran,
+    .six-icon,
+    .text-more,
+    .info-title {
+      .animated();
+    }
+    .text {
+      animation-delay: @timer;
+    }
+    .info-title {
+      animation-delay: @timer+.5;
+    }
+    .six-icon {
+      animation-delay: @timer+1;
+    }
+    .text-more {
+      animation-delay: @timer+1.5;
+    }
+    .image1 {
+      animation-delay: @timer+1.8;
+    }
+    .trans1 {
+      animation-delay: @timer+2;
+    }
+    .image2 {
+      animation-delay: @timer+2.2;
+    }
+    .trans2 {
+      animation-delay: @timer+2.4;
+    }
+    .image3 {
+      animation-delay: @timer+2.6;
+    }
+    .bg {
+      .animated();
+      .fadeIn();
+    }
+  }
+}
+
+.page-4 {
+  .marker,
+  .image,
+  .text,
+  .tran,
+  .six-icon,
+  .text-more,
+  .info-title {
+    transition: all 0.3s ease-in-out;
+  }
+  .bg {
+    background-image: url("../images/4/bg.jpg");
+  }
+  .marker {
+    position: absolute;
+    top: 34px;
+    right: 2rem;
+    width: 2.3rem;
+    height: 100px;
+    background: url("../images/4/marker-log.png") no-repeat;
+    background-size: contain;
+    transform: translate3d(0, -200%, 0);
+  }
+  .text {
+    position: absolute;
+    top: 32px;
+    left: 2rem;
+    width: 3.5rem;
+    height: 208px;
+    background: url("../images/4/text.png") no-repeat;
+    background-size: contain;
+  }
+  .info-title {
+    position: absolute;
+    width: 1.5rem;
+    height: 226px;
+    right: 1.4rem;
+    top: 295px;
+    background: url("../images/4/info-title.png") no-repeat;
+    background-size: contain;
+  }
+  .six-icon {
+    position: absolute;
+    width: 1.4rem;
+    height: 386px;
+    right: 3.1rem;
+    bottom: 22px;
+    background: url("../images/4/six-icon.png") no-repeat;
+    background-size: contain;
+  }
+  .text-more {
+    position: absolute;
+    width: 0.5rem;
+    height: 276px;
+    bottom: 80px;
+    left: 4.5rem;
+    background: url("../images/4/text-more.png") no-repeat;
+    background-size: contain;
+  }
+  .image {
+    position: absolute;
+    height: 2.4rem;
+    width: 2.8rem;
+    left: 1.4rem;
+    bottom: 302px;
+    background: url("../images/4/image1.png") no-repeat;
+    background-size: contain;
+  }
+  .image2 {
+    bottom: 168px;
+    background-image: url("../images/4/image2.png");
+  }
+  .image3 {
+    bottom: 32px;
+    background-image: url("../images/4/image3.png");
+  }
+  .tran {
+    position: absolute;
+    height: 1rem;
+    width: 2.2rem;
+    left: 1.9rem;
+    bottom: 265px;
+    background: url("../images/4/trans1.png") no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+  .trans2 {
+    background-image: url("../images/4/trans2.png");
+    height: 1rem;
+    width: 2.9rem;
+    bottom: 130px;
+    left: 1.4rem;
+  }
+  // @media (max-height: 666px) {
+    .six-icon {
+      zoom: 0.9;
+    }
+    .text-more {
+      zoom: 0.9;
+    }
+    .image-wrap {
+      transform: scale(0.9);
+      position: absolute;
+      top: 0;
+      left: -20px;
+      right: 0;
+      bottom: -40px;
+    }
+  // }
+}

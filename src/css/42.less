@@ -1,0 +1,112 @@
+@import "./animate.less";
+@timer: 0.5s;
+.loop-timer42(@n, @i: 1) when(@i =< @n) {
+  .image@{i} {
+    animation-delay: 0.5+ @i*0.5s;
+  }
+  .loop-timer42(@n, (@i+1));
+}
+
+.page-active {
+  .page-42 {
+    .bg,
+    .title,
+    .image {
+      .animated();
+    }
+    .loop-timer42(10);
+  }
+}
+
+.page-42 {
+  background: url("../images/42/bg.jpg") center center no-repeat;
+  background-size: 100% 100%;
+  .bg {
+    opacity: 0;
+    background: url("../images/42/bg.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,
+  .image {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .title {
+    background-image: url("../images/42/title.png");
+    width: 0.6rem;
+    height: 166px;
+    right: 0.8rem;
+    top: 32px;
+  }
+  .image1 {
+    background-image: url("../images/42/image1.png");
+    top: 80px;
+    left: 200px;
+    width: 100px;
+    height: 140px;
+  }
+  .image2 {
+    background-image: url("../images/42/image2.png");
+    top: 240px;
+    left: 200px;
+    width: 100px;
+    height: 140px;
+  }
+  .image3 {
+    background-image: url("../images/42/image3.png");
+    top: 400px;
+    left: 200px;
+    width: 100px;
+    height: 140px;
+  }
+  .image4 {
+    background-image: url("../images/42/image4.png");
+    top: 58px;
+    left: 158px;
+    width: 22px;
+    height: 497px;
+  }
+  .image5 {
+    background-image: url("../images/42/image5.png");
+    top: 90px;
+    left: 104px;
+    width: 40px;
+    height: 128px;
+  }
+  .image6 {
+    background-image: url("../images/42/image6.png");
+    top: 250px;
+    left: 104px;
+    width: 28px;
+    height: 104px;
+  }
+  .image7 {
+    background-image: url("../images/42/image7.png");
+    top: 410px;
+    left: 104px;
+    width: 28px;
+    height: 104px;
+  }
+  .image8 {
+    background-image: url("../images/42/image8.png");
+    top: 90px;
+    left: 25px;
+    width: 70px;
+    height: 123px;
+  }
+  .image9 {
+    background-image: url("../images/42/image9.png");
+    top: 250px;
+    left: 17px;
+    width: 75px;
+    height: 123px;
+  }
+  .image10 {
+    background-image: url("../images/42/image10.png");
+    top: 410px;
+    left: 20px;
+    width: 79px;
+    height: 94px;
+  }
+}

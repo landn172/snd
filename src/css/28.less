@@ -1,0 +1,106 @@
+@import "./animate.less";
+.page-active {
+  .page-28 {
+    .bg {
+      .animated();
+    }
+    .title,.text,.product,.img1,.img2,.img3,.img4,.img5{
+      .animated();
+    }
+    .text {
+      animation-delay: 0.3s;
+    }
+    .product {
+      animation-delay: 0.6s;
+    }
+    .img1 {
+      animation-delay: 0.9s;
+    }
+    .img2 {
+      animation-delay: 1.2s;
+    }
+    .img3 {
+      animation-delay: 1.5s;
+    }
+    .img4 {
+      animation-delay: 1.8s;
+    }
+    .img5 {
+      animation-delay: 2.1s;
+    }
+  }
+}
+
+.page-28 {
+  .bg {
+    opacity: 0;
+    background: url("../images/28/bg1.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,.text,.product,.img1,.img2,.img3,.img4,.img5{
+    background-size: contain;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    background-repeat: no-repeat;
+  }
+  .title {
+    background-image: url("../images/28/title.png");
+    width: 0.6rem;
+    height: 336px;
+    top: 32px;
+    right: 0.8rem;
+  }
+  .text {
+    background-image: url("../images/28/text.png");
+    width: 0.65rem;
+    height: 493px;
+    top: 70px;
+    right: 1.8rem;
+  }
+  .product {
+    background-image: url("../images/28/product.png");
+    width: 5.2rem;
+    height: 195px;
+    top: 230px;
+    right: 3.3rem;
+  }
+  .img1 {
+    background-image: url("../images/28/img1.png");
+    width: 2.3rem;
+    height: 67px;
+    top: 158px;
+    right: 2.8rem;
+    animation-name: myFadeInRightTop;
+  }
+  .img2 {
+    background-image: url("../images/28/img2.png");
+    width: 1.5rem;
+    height: 144px;
+    top: 80px;
+    right: 6.3rem;
+    animation-name: myFadeInLeftTop;
+  }
+  .img3 {
+    background-image: url("../images/28/img3.png");
+    width: 2.2rem;
+    height: 80px;
+    top: 430px;
+    right: 2.9rem;
+    animation-name: myFadeInRightDown;
+  }
+  .img4 {
+    background-image: url("../images/28/img4.png");
+    width: 2.2rem;
+    height: 104px;
+    top: 430px;
+    right: 6rem;
+    animation-name: myFadeInLeftDown;
+  }
+  .img5 {
+    background-image: url("../images/28/img5.png");
+    width: 1.35rem;
+    height: 170px;
+    top: 250px;
+    left: 4px;
+  }
+}

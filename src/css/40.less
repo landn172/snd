@@ -1,0 +1,96 @@
+@import "./animate.less";
+.page-active {
+  .page-40 {
+    .bg,
+    .btn {
+      .animated();
+    }
+    .circle {
+      &::after {
+        transform: none;
+      }
+    }
+    .btn1 {
+      animation-delay: 0.5s;
+    }
+    .btn2 {
+      animation-delay: 1s;
+    }
+    .btn3 {
+      animation-delay: 1.5s;
+    }
+    .btn4 {
+      animation-delay: 2s;
+    }
+  }
+}
+
+.page-40 {
+  .bg {
+    background: url("../images/40/bg.jpg") center center no-repeat;
+    background-size: 100% 100%;
+    opacity: 0;
+  }
+  .btn {
+    position: absolute;
+    width: 1.2rem;
+    height: 189px;
+    background-size: contain;
+    top: 21px;
+  }
+  .btn1 {
+    background-image: url("../images/40/nor0.png");
+    right: 1.8rem;
+    &:hover,
+    :active {
+      background-image: url("../images/40/over0.png");
+    }
+  }
+  .btn2 {
+    background-image: url("../images/40/nor1.png");
+    right: 3.5rem;
+    &:hover,
+    :active {
+      background-image: url("../images/40/over1.png");
+    }
+  }
+  .btn3 {
+    background-image: url("../images/40/nor2.png");
+    right: 5.2rem;
+    &:hover,
+    :active {
+      background-image: url("../images/40/over2.png");
+    }
+  }
+  .btn4 {
+    background-image: url("../images/40/nor3.png");
+    right: 7rem;
+    &:hover,
+    :active {
+      background-image: url("../images/40/over3.png");
+    }
+  }
+  .circle {
+    position: absolute;
+    width: 2.4rem;
+    height: 2.4rem;
+    bottom: 73px;
+    left: 5.2rem;
+    &:hover,
+    :active {
+      &::after {
+        background-image: url("../images/40/circle-hover.png");
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("../images/40/circle.png") center center no-repeat;
+      background-size: contain;
+      transform: translate(0, 200%);
+      transition: transform 1s 2s ease-in-out;
+    }
+  }
+}

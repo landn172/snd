@@ -1,0 +1,250 @@
+@import './css/animate.less';
+html,
+body,
+.wrapper {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+html {
+  font-size: 37.5px;
+}
+
+.preload-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: #000;
+  #preloadContainer {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.wrapper {
+  width: 375px;
+  height: 603px;
+  // width: 100%;
+  // height: 100%;
+  margin: auto;
+  transform-origin: top center;
+}
+
+.no-animation-name {
+  div {
+    animation-name: none;
+    animation-delay: 0;
+    transition-delay: 0;
+  }
+}
+
+#main-container,
+.slider-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-container {
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  &.active {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+#main-container {
+  transition: opacity 0.1s linear;
+  &.disable {
+    opacity: 0;
+  }
+}
+
+.content {
+  position: relative;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.page-active .content {
+  opacity: 1;
+}
+
+.bg {
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  &.bg-full {
+    background-size: 100% 100%;
+  }
+}
+
+// 当前页样式
+.islider-active {
+}
+
+.btn,
+.circle,
+.img {
+  background-repeat: no-repeat;
+}
+
+#back-icon {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+
+  // bottom: 8px;
+  // right: 0.5rem;
+  bottom: 3px;
+  right: 0.3rem;
+  background: url('./images/back.png') center center no-repeat;
+  background-size: contain;
+  z-index: 10;
+  transform: translateZ(0px);
+}
+
+.pulseBig {
+  animation-name: pulseBig;
+}
+
+@keyframes pulseBig {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.5, 1.5, 1.5);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes myFlash {
+  from,
+  50%,
+  to {
+    opacity: 0;
+  }
+
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+@keyframes myFadeInLeftDown {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes myFadeInRightDown {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes myFadeInLeftTop {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes myFadeInRightTop {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@import './css/1.less';
+@import './css/2.less';
+@import './css/3.less';
+@import './css/4.less';
+@import './css/5.less';
+@import './css/6.less';
+@import './css/7.less';
+@import './css/8.less';
+@import './css/9.less';
+@import './css/10.less';
+@import './css/11.less';
+@import './css/12.less';
+@import './css/13.less';
+@import './css/14.less';
+@import './css/15.less';
+@import './css/16.less';
+@import './css/17.less';
+@import './css/18.less';
+@import './css/19.less';
+@import './css/20.less';
+@import './css/21.less';
+@import './css/22.less';
+@import './css/23.less';
+@import './css/24.less';
+@import './css/25.less';
+@import './css/26.less';
+@import './css/27.less';
+@import './css/28.less';
+@import './css/29.less';
+@import './css/30.less';
+@import './css/31.less';
+@import './css/32.less';
+@import './css/33.less';
+@import './css/34.less';
+@import './css/35.less';
+@import './css/36.less';
+@import './css/37.less';
+@import './css/38.less';
+@import './css/39.less';
+@import './css/40.less';
+@import './css/41.less';
+@import './css/42.less';
+@import './css/43.less';
+@import './css/44.less';
+@import './css/45.less';
+@import './css/46.less';
+@import './css/47.less';
+@import './css/48.less';

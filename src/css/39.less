@@ -1,0 +1,41 @@
+@import "./animate.less";
+.page-active {
+  .page-39 {
+    .bg,
+    .title,
+    .image {
+      .animated();
+    }
+    .image{
+      animation-delay: 1s;
+    }
+  }
+}
+
+.page-39 {
+  .bg {
+    opacity: 0;
+    background: url("../images/39/bg.jpg") center center no-repeat;
+    background-size: 100% 100%;
+  }
+  .title,
+  .image {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .title {
+    background-image: url("../images/39/title.png");
+    width: 0.6rem;
+    height: 202px;
+    right: 0.8rem;
+    top: 32px;
+  }
+  .image {
+    background-image: url("../images/39/image.png");
+    top: 29px;
+    left: 30px;
+    width: 260px;
+    height: 560px;
+  }
+}

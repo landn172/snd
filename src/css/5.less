@@ -1,0 +1,129 @@
+@import "./animate.less";
+.page-active {
+  .page-5 {
+    .bg {
+      .animated();
+    }
+    .gear {
+      .animated.infinite();
+      animation-name: infiniteRotate;
+      animation-timing-function: linear;
+      transform-origin: center center;
+      animation-duration: 3s;
+    }
+    .title {
+      .animated();
+    }
+    .text {
+      .animated();
+    }
+    .text1 {
+      animation-delay: 0.7s;
+    }
+    .text2 {
+      animation-delay: 1s;
+    }
+    .text3 {
+      animation-delay: 1.5s;
+    }
+    .text4 {
+      animation-delay: 2s;
+    }
+  }
+}
+
+.page-5 {
+  .bg {
+    background-image: url("../images/5/bg.jpg");
+    opacity: 0;
+  }
+  .title {
+    position: absolute;
+    width: 0.8rem;
+    height: 256px;
+    top: 31px;
+    right: 0.5rem;
+    background: url("../images/5/title.png") no-repeat;
+    background-size: contain;
+  }
+  .text {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .text1 {
+    top: 35px;
+    right: 2.4rem;
+    width: 1.5rem;
+    height: 167px;
+    background-image: url("../images/5/text-left-top.png");
+  }
+  .text2 {
+    top: 75px;
+    left: 1.2rem;
+    width: 1.4rem;
+    height: 114px;
+    background-image: url("../images/5/text-left-bottom.png");
+  }
+  .text3 {
+    bottom: 68px;
+    right: 2.6rem;
+    width: 1rem;
+    height: 138px;
+    background-image: url("../images/5/text-right-top.png");
+  }
+  .text4 {
+    bottom: 95px;
+    left: 1.2rem;
+    width: 1.4rem;
+    height: 141px;
+    background-image: url("../images/5/text-right-bottom.png");
+  }
+  .gear {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .gear1 {
+    background-image: url("../images/5/gear1.png");
+    width: 2.8rem;
+    height: 2.8rem;
+    top: 156px;
+    left: 2.2rem;
+  }
+  .gear2 {
+    background-image: url("../images/5/gear2.png");
+    width: 3.4rem;
+    height: 3.4rem;
+    top: 214px;
+    left: 4.4rem;
+  }
+  .gear3 {
+    background-image: url("../images/5/gear3.png");
+    width: 2rem;
+    height: 2rem;
+    top: 342px;
+    left: 5.4rem;
+  }
+  .gear4 {
+    background-image: url("../images/5/gear4.png");
+    width: 3rem;
+    height: 3rem;
+    top: 378px;
+    left: 2.8rem;
+  }
+  // @media (max-height: 666px) {
+    .text3 {
+      bottom: 28px;
+    }
+  // }
+}
+
+@keyframes infiniteRotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
