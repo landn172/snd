@@ -58,7 +58,7 @@ for (let i = 0; i < pageLen; ) {
 
 const $body = $('body')
 const $back = $('#back-icon').hide()
-const initIndex = getRealPageNumber(11) // 初始化index
+const initIndex = getRealPageNumber(1) // 初始化index
 const mainHistory = new HistorySlider(initIndex)
 const histroyRouter = new HistoryRouter()
 let mainTempSlider

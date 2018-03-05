@@ -1,14 +1,18 @@
-@import "./animate.less";
+@import './animate.less';
 @timer: 1s;
 .page-active {
   .page-30 {
     .bg {
       .animated();
     }
-    .title,.text1,.text2,.text3,.img{
+    .title,
+    .text1,
+    .text2,
+    .text3,
+    .img {
       .animated();
     }
-    .title{
+    .title {
       animation-delay: @timer;
     }
     .text1 {
@@ -29,17 +33,21 @@
 .page-30 {
   .bg {
     opacity: 0;
-    background: url("../images/30/bg1.jpg") center center no-repeat;
+    background: url('../images/30/bg1.jpg') center center no-repeat;
     background-size: 100% 100%;
   }
-  .title,.text1,.text2,.text3,.img{
+  .title,
+  .text1,
+  .text2,
+  .text3,
+  .img {
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
     transition: all 0.3s ease-in-out;
   }
   .title {
-    background-image: url("../images/30/title.png");
+    background-image: url('../images/30/title.png');
     width: 90px;
     height: 208px;
     top: 100px;
@@ -47,49 +55,44 @@
     background-size: cover;
   }
   .text1 {
-    background-image: url("../images/30/text1.png");
+    background-image: url('../images/30/text1.png');
     width: 0.68rem;
     height: 209px;
     bottom: 99px;
     right: 0.74rem;
   }
   .img {
-    background-image: url("../images/30/img.png");
-    width: 3rem;
-    height: 206px;
-    bottom: 100px;
-    right: 1.8rem;
+    background-image: url('../images/30/img-new.png');
+    width: 4rem;
+    height: 210px;
+    bottom: 60px;
+    right: 0.6rem;
   }
   .text2 {
-    background-image: url("../images/30/text2.png");
+    background-image: url('../images/30/text2.png');
     width: 1.8rem;
     height: 178px;
     bottom: 128px;
     right: 5.2rem;
   }
   .text3 {
-    background-image: url("../images/30/text3.png");
+    background-image: url('../images/30/text3.png');
     width: 2rem;
     height: 158px;
     bottom: 144px;
     left: 0.65rem;
     background-size: cover;
+  } // @media (max-height: 666px) {
+  .title {
+    top: 80px;
   }
-  // @media (max-height: 666px) {
-    .title {
-      top: 80px;
-    }
-    .text1 {
-      bottom: 69px;
-    }
-    .img {
-      bottom: 70px;
-    }
-    .text2 {
-      bottom: 98px;
-    }
-    .text3 {
-      bottom: 114px;
-    }
-  // }
+  .text1 {
+    bottom: 69px;
+  }
+  .text2 {
+    bottom: 98px;
+  }
+  .text3 {
+    bottom: 114px;
+  } // }
 }
