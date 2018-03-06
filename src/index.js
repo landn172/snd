@@ -8,7 +8,10 @@ import {
 import HistoryRouter from './router'
 import HistorySlider from './historySlider'
 import TempSlider from './TempSlider'
-import { pagesConfig, eventConfig } from './config'
+import {
+  pagesConfig,
+  eventConfig
+} from './config'
 import './islider.less'
 import './index.less'
 import './video/video.mp4'
@@ -17,7 +20,10 @@ FastClick.attach(document.body)
 
 function zoomBody() {
   const [originalWith, originalHeight] = [375, 603]
-  const { innerWidth, innerHeight } = window
+  const {
+    innerWidth,
+    innerHeight
+  } = window
   const scaleWith = innerWidth / originalWith
   const scaleHeight = innerHeight / originalHeight
 
@@ -49,7 +55,7 @@ function requirePageContent(pageName) {
   return require(`${__dirname}/pages/${pageName}.ejs`)
 }
 
-for (let i = 0; i < pageLen; ) {
+for (let i = 0; i < pageLen;) {
   i += 1
   pageData.push({
     content: requirePageContent(i)
@@ -99,10 +105,9 @@ function Init() {
 
 document.addEventListener(
   'touchmove',
-  function(event) {
+  function (event) {
     event.preventDefault()
-  },
-  {
+  }, {
     passive: false
   }
 )
@@ -115,7 +120,10 @@ function clickEventHandle(selector, toPageNumber) {
     if (targetSlider) {
       const sliderData = targetSlider.getRenderData(pageData).reverse()
       const sliderIndex = targetSlider.getSlideToNumber(toPageNumber)
-      const { sectionHistory, sectionSlider } = InitSectionSlider(
+      const {
+        sectionHistory,
+        sectionSlider
+      } = InitSectionSlider(
         sliderData,
         getRealPageNumber(sliderIndex, sliderData.length) - 1
       )
@@ -142,7 +150,10 @@ const specialConfig = {
 }
 
 // 特别按钮
-function SpecialClick({ pageNumber, toPageNumber }) {
+function SpecialClick({
+  pageNumber,
+  toPageNumber
+}) {
   if (pageNumber === 7) {
     // page7 放大3d效果
     if (toPageNumber === 23) {
@@ -181,6 +192,10 @@ function SpecialClick({ pageNumber, toPageNumber }) {
     } catch (e) {
       video.webkitEnterFullscreen()
     }
+
+    setTimeout(() => {
+      video.play()
+    }, 300);
   }
 
   layerMaskEventHandle(pageNumber, toPageNumber, 2)
@@ -190,6 +205,7 @@ function SpecialClick({ pageNumber, toPageNumber }) {
 function onFullScreenChange(event) {
   if (checkFull()) {
     console.log('进入全屏')
+    video.play()
   } else {
     console.log('退出全屏')
     const video = document.getElementById('video')
