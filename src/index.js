@@ -63,11 +63,13 @@ const mainHistory = new HistorySlider(initIndex)
 const histroyRouter = new HistoryRouter()
 let mainTempSlider
 
-window._preload.on((loaded, total) => {
-  if (loaded === total) {
-    Init()
-  }
-})
+// window._preload.on((loaded, total) => {
+//   if (loaded === total) {
+//     Init()
+//   }
+// })
+
+Init()
 
 function Init() {
   // 主slider

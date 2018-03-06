@@ -6,6 +6,7 @@ const autoprefixer = require("autoprefixer");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const ParallelUglifyPlugin = require("webpack-parallel-uglify-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 const {
   resolve
@@ -49,6 +50,16 @@ const webpackConfig = merge(config, {
         optimizationLevel: 3
       },
       cacheFolder: resolve(".cache")
+    }),
+    new PreloadWebpackPlugin({
+      rel: 'preload',
+      include: 'allAssets',
+      as(entry) {
+        if (/\.css$/.test(entry)) return 'style';
+        if (/\.woff$/.test(entry)) return 'font';
+        if (/\.(png|jpg)$/.test(entry)) return 'image';
+        return 'script';
+      }
     }),
     new ParallelUglifyPlugin({
       cacheDir: ".cache/",

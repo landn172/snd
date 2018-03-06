@@ -42,6 +42,8 @@
     "imagemin-webpack-plugin": "^1.5.2",
     "less-loader": "^4.0.5",
     "postcss-loader": "^2.0.9",
+    "preload-image-loader": "^1.0.0",
+    "preload-webpack-plugin": "^2.3.0",
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
     "webpack-merge": "^4.1.1",
