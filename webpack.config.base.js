@@ -43,7 +43,6 @@ const config = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',

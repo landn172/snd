@@ -5,6 +5,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const ParallelUglifyPlugin = require("webpack-parallel-uglify-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 const {
   resolve
 } = require("path");
@@ -40,15 +42,13 @@ const webpackConfig = merge(config, {
     }]
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
       optipng: {
         optimizationLevel: 3
       },
-      cacheFolder: resolve(".cache"),
-      jpegtran: {
-        arithmetic: true
-      }
+      cacheFolder: resolve(".cache")
     }),
     new ParallelUglifyPlugin({
       cacheDir: ".cache/",

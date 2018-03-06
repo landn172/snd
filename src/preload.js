@@ -62,7 +62,7 @@ function loadAssert(url) {
 
 const preload = new Preload()
 
-preload.loadMainfest('/manifest.json')
+preload.loadMainfest('manifest.json')
 
 preload.on((loaded, total) => {
   const percent = ~~loaded / total
