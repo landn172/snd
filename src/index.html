@@ -21,7 +21,34 @@
   <div class="wrapper">
     <div id="back-icon"></div>
   </div>
+  <script>
+    (function (loadVconsole, touchmovePassive, isDebugger) {
+      if (isDebugger) {
+        loadVconsole()
+      } else {
+        touchmovePassive()
+      }
+    })(function loadVconsole() {
+      var script = document.createElement('script')
+      script.src = "https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"
+      script.async = true
+      script.defer = true
+      script.onload = function (params) {
+        var vConsole = new VConsole();
+      }
+      document.head.appendChild(script)
+    }, function touchmovePassive(params) {
+      document.addEventListener(
+        'touchmove',
+        function (event) {
+          event.preventDefault()
+        }, {
+          passive: false
+        }
+      )
+    }, false);
 
+  </script>
 </body>
 
 </html>

@@ -103,15 +103,6 @@ function Init() {
   histroyRouter.registerHistory(mainHistory, mainTempSlider)
 }
 
-document.addEventListener(
-  'touchmove',
-  function (event) {
-    event.preventDefault()
-  }, {
-    passive: false
-  }
-)
-
 function clickEventHandle(selector, toPageNumber) {
   const pageNumber = getClassPageNumber(selector)
   $body.on('click', selector, e => {
